@@ -35,6 +35,11 @@ public class ScriptShooter : MonoBehaviour
 
     void Update()
     {
+        if (PS.isInteracted)
+        {
+            return;
+        }
+
         if (PS.isDead != true)
         {
             ResearchOrb = GameObject.FindGameObjectWithTag("ResearchOrb");

@@ -337,7 +337,7 @@ MonoBehaviour:
   dashSpeed: 150
   dashSpeed2: 145
   dashing: 0
-  dashStoping: 0.1
+  dashStoping: 0.2
   startDashing: 0.35
   dashDistance: 2
   isDash: 0

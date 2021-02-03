@@ -58,7 +58,7 @@ public class PlayerMoveMent : MonoBehaviour
         animator.SetFloat("Vertical", movement.y);
         animator.SetFloat("Speed", movement.sqrMagnitude);
 
-        if ((movement.x == 1 && movement.y == 1) || (movement.x == -1 && movement.y == -1) || (movement.x == 1 && movement.y == -1) || (movement.x == -1 && movement.y == 1))
+        if ((movement.x != 0 && movement.y != 0))
         {
             SideWalk = true;
         }
@@ -67,7 +67,7 @@ public class PlayerMoveMent : MonoBehaviour
             SideWalk = false;
         }
 
-        if (Input.GetKeyDown("space") && (dashing >= startDashing) && (movement.x != 0 || movement.y != 0) && Ps.isDamaged == false)
+        if (Input.GetAxisRaw("Getdash") == 1 && (dashing >= startDashing) && (movement.x != 0 || movement.y != 0) && Ps.isDamaged == false)
         {
             isDash = true;
             animator.SetTrigger("Dash");
@@ -114,7 +114,7 @@ public class PlayerMoveMent : MonoBehaviour
                 //transform.position = Vector2.MoveTowards(transform.position, currentPosition + (movement * dashSpeed2) , dashDistance);
                 if (Input.GetKey("w") || Input.GetKey("a"))
                 {
-                    rb.AddForce((transform.up + (-transform.right)) * (dashSpeed2 / 2));
+                    rb.AddForce((transform.up + (-transform.right)) * (dashSpeed2 /2));
                 }
 
                 if (Input.GetKey("w") || Input.GetKey("d"))
