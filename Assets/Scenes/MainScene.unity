@@ -441,6 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e48f4b858534fe47aba69573fa83848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CutScene: {fileID: 4925905929561182606, guid: 9336aecd108674247a426fbc14c78000, type: 3}
   ContineButton: {fileID: 1901035434}
 --- !u!114 &73355097
 MonoBehaviour:

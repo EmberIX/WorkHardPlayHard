@@ -9,6 +9,7 @@ public class StartGame : MonoBehaviour
     ItemTrack IT;
     ChangeScene CS;
 
+    public GameObject CutScene;
     public GameObject ContineButton;
     void Start()
     {
@@ -37,7 +38,7 @@ public class StartGame : MonoBehaviour
         PS.SavePlayer();
         IT.SaveData();
 
-        CS.LoadScene("Tutorial");
+        Instantiate(CutScene, transform.position, Quaternion.identity);
     }
 
     public void Continue()
