@@ -34,6 +34,20 @@ public class BlockRoom : MonoBehaviour
 
             Destroy(this);
         }
+
+        //for (enemyIndex = 0; EnemyTraget[enemyIndex] = null; enemyIndex++)
+        //{
+
+
+        //    if (enemyIndex > EnemyTraget.Length)
+        //    {
+        //        Barrior.SetActive(false);
+        //        Barrior2.SetActive(false);
+
+        //        Destroy(this);
+        //    }
+
+        //}
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

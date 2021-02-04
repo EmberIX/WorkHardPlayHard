@@ -61,7 +61,7 @@ public class SpearScript : MonoBehaviour
                 Durability = Break;
             }
 
-            if (Input.GetMouseButtonDown(0) && Durability > 0 )
+            if (Input.GetButtonDown("Attack") && Durability > 0 )
             {
                 FireSpear();
                 Durability -= 1.5f;
@@ -69,7 +69,7 @@ public class SpearScript : MonoBehaviour
                 isAttacking = true;
                 StillAttack = 0;
             }
-            else if (Input.GetMouseButtonDown(0) && Durability <= 0)
+            else if (Input.GetButtonDown("Attack") && Durability <= 0)
             {
                 FireSpear2();
 
@@ -77,12 +77,12 @@ public class SpearScript : MonoBehaviour
                 StillAttack = 0;
             }
 
-            if (Input.GetMouseButtonDown(1) && CB.bulletKeep < CB.KeepMax && PS.itemUse!= "penMod")
+            if (Input.GetButtonDown("Attack2") && CB.bulletKeep < CB.KeepMax && PS.itemUse!= "penMod")
             {
                 Summon();
                 SetSpearBar();
             }
-            else if (Input.GetMouseButtonDown(1) && CB.bulletKeep < CB.KeepMax && PS.itemUse == "penMod")
+            else if (Input.GetButtonDown("Attack2") && CB.bulletKeep < CB.KeepMax && PS.itemUse == "penMod")
             {
                 Summon2();
                 SetSpearBar();

@@ -70,7 +70,7 @@ public class PlayerMoveMent : MonoBehaviour
             SideWalk = false;
         }
 
-        if (Input.GetAxisRaw("Getdash") == 1 && (dashing >= startDashing) && (movement.x != 0 || movement.y != 0) && Ps.isDamaged == false)
+        if (Input.GetButtonDown("GetDash") && (dashing >= startDashing) && (movement.x != 0 || movement.y != 0) && Ps.isDamaged == false)
         {
             isDash = true;
             animator.SetTrigger("Dash");

@@ -43,7 +43,7 @@ public class ScriptShooter : MonoBehaviour
         if (PS.isDead != true)
         {
             ResearchOrb = GameObject.FindGameObjectWithTag("ResearchOrb");
-            if (Input.GetMouseButtonDown(0) && heating > 0)
+            if (Input.GetButtonDown("Attack") && heating > 0)
             {
                 FireBullet();
                 SoundManagerScript.PlaySound(SoundManagerScript.shootBullet);
@@ -51,13 +51,13 @@ public class ScriptShooter : MonoBehaviour
                 SetEnegyBar();
             }
 
-            if (Input.GetMouseButtonDown(0) && heating <= 0)
+            if (Input.GetButtonDown("Attack") && heating <= 0)
             {
                 SoundManagerScript.PlaySound(SoundManagerScript.clickSound);
                 FireSmallBullet();
             }
 
-            if (Input.GetMouseButtonDown(1) && CB.bulletKeep < CB.KeepMax)
+            if (Input.GetButtonDown("Attack2") && CB.bulletKeep < CB.KeepMax)
             {
                 
                 FireSpecialBullet();
