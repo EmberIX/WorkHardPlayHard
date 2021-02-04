@@ -27,7 +27,7 @@ public class BlockRoom : MonoBehaviour
             enemyIndex = 0;
         }
 
-        if (enemyIndex == 9 && EnemyTraget[9] == null)
+        if (enemyIndex == EnemyTraget.Length)
         {
             Barrior.SetActive(false);
             Barrior2.SetActive(false);
