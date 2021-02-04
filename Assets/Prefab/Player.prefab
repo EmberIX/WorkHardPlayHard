@@ -333,11 +333,10 @@ MonoBehaviour:
   movement: {x: 0, y: 0}
   SideWalk: 0
   stamina: 0
-  maxStamina: 1
-  dashSpeed: 150
-  dashSpeed2: 145
+  dashSpeed: 400
+  dashSpeed2: 200
   dashing: 0
-  dashStoping: 0.2
+  dashStoping: 0.05
   startDashing: 0.35
   dashDistance: 2
   isDash: 0

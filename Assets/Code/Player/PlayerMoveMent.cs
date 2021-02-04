@@ -12,10 +12,10 @@ public class PlayerMoveMent : MonoBehaviour
     public bool SideWalk;
 
     public float stamina;
-    public float maxStamina;
+    float maxStamina;
 
-    public float dashSpeed = 6;
-    public float dashSpeed2 = 6;
+    public float dashSpeed = 400;
+    public float dashSpeed2 = 400;
     public float dashing;
     public float dashStoping = 0.1f;
     public float startDashing = 1.0f;
@@ -45,11 +45,14 @@ public class PlayerMoveMent : MonoBehaviour
         }
 
 
-
         currentPosition = new Vector2(player.position.x, player.position.y);
 
-        if (isDash == false && Ps.isDamaged == false)
+        if (Ps.isDamaged == false)
         {
+            if (isDash)
+            {
+                return;
+            }
             movement.x = Input.GetAxisRaw("Horizontal");
             movement.y = Input.GetAxisRaw("Vertical");
         }
@@ -114,22 +117,22 @@ public class PlayerMoveMent : MonoBehaviour
                 //transform.position = Vector2.MoveTowards(transform.position, currentPosition + (movement * dashSpeed2) , dashDistance);
                 if (Input.GetKey("w") || Input.GetKey("a"))
                 {
-                    rb.AddForce((transform.up + (-transform.right)) * (dashSpeed2 /2));
+                    rb.AddForce((transform.up + (-transform.right)) * (dashSpeed2));
                 }
 
                 if (Input.GetKey("w") || Input.GetKey("d"))
                 {
-                    rb.AddForce((transform.up + (transform.right)) * (dashSpeed2 / 2));
+                    rb.AddForce((transform.up + (transform.right)) * (dashSpeed2));
                 }
 
                 if (Input.GetKey("s") || Input.GetKey("d"))
                 {
-                    rb.AddForce(((-transform.up) + (transform.right)) * (dashSpeed2 / 2));
+                    rb.AddForce(((-transform.up) + (transform.right)) * (dashSpeed2));
                 }
 
                 if (Input.GetKey("s") || Input.GetKey("a"))
                 {
-                    rb.AddForce(((-transform.up) + ((-transform.right))) * (dashSpeed2 / 2));
+                    rb.AddForce(((-transform.up) + ((-transform.right))) * (dashSpeed2));
                 }
             }
             if (!SideWalk)

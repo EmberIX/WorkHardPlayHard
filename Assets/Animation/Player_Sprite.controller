@@ -533,8 +533,8 @@ AnimatorState:
   m_Transitions:
   - {fileID: -2795179855757336804}
   - {fileID: 8106468933273760651}
-  - {fileID: 5442729949746880226}
   - {fileID: 665275254838879813}
+  - {fileID: 5442729949746880226}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -864,7 +864,7 @@ AnimatorState:
   m_PrefabAsset: {fileID: 0}
   m_Name: Player_DashLeft
   m_Speed: 1
-  m_CycleOffset: 0
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: 4485557419944406806}
   m_StateMachineBehaviours: []
