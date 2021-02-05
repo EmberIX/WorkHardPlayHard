@@ -18,36 +18,36 @@ public class BlockRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(EnemyTraget[enemyIndex] == null)
-        {
-            enemyIndex += 1;
-        }
-        else if (EnemyTraget[enemyIndex] != null)
-        {
-            enemyIndex = 0;
-        }
-
-        if (enemyIndex == EnemyTraget.Length)
-        {
-            Barrior.SetActive(false);
-            Barrior2.SetActive(false);
-
-            Destroy(this);
-        }
-
-        //for (enemyIndex = 0; EnemyTraget[enemyIndex] = null; enemyIndex++)
+        //if(EnemyTraget[enemyIndex] == null)
         //{
-
-
-        //    if (enemyIndex > EnemyTraget.Length)
-        //    {
-        //        Barrior.SetActive(false);
-        //        Barrior2.SetActive(false);
-
-        //        Destroy(this);
-        //    }
-
+        //    enemyIndex += 1;
         //}
+        //else if (EnemyTraget[enemyIndex] != null)
+        //{
+        //    enemyIndex = 0;
+        //}
+
+        //if (enemyIndex == EnemyTraget.Length)
+        //{
+        //    Barrior.SetActive(false);
+        //    Barrior2.SetActive(false);
+
+        //    Destroy(this);
+        //}
+
+        for (enemyIndex = 0; EnemyTraget[enemyIndex] == null; enemyIndex++)
+        {
+
+
+            if (enemyIndex > EnemyTraget.Length)
+            {
+                Barrior.SetActive(false);
+                Barrior2.SetActive(false);
+
+                Destroy(this);
+            }
+
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
