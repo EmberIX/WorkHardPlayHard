@@ -17,6 +17,7 @@ public class CutScene : MonoBehaviour
     void Start()
     {
         Cs = GameObject.FindObjectOfType<ChangeScene>();
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
@@ -44,6 +45,7 @@ public class CutScene : MonoBehaviour
 
     void FinishCutScene()
     {
+        Cursor.visible = true;
         Cs.LoadScene(Scene);
     }
     void OpenNextCutScene()
