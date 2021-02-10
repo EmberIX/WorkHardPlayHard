@@ -23537,6 +23537,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pen: {fileID: 4165133543847225363, guid: 61d200719e6b12041afe8d22fade3782, type: 3}
   noteBook: {fileID: 5373489917324911624, guid: 70ec0d72d78106e4fb67f2c3e7e7f639, type: 3}
+  customCursor: {fileID: 2800000, guid: 4ad58e29a37d0f140a5b827d7486b101, type: 3}
 --- !u!4 &1199210845
 Transform:
   m_ObjectHideFlags: 0

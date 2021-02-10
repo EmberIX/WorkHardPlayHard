@@ -8,6 +8,7 @@ public class WeaponSettingInDungon : MonoBehaviour
     PlayerScript PS;
     public GameObject pen;
     public GameObject noteBook;
+    public Texture2D customCursor;
 
     void Awake()
     {
@@ -27,7 +28,7 @@ public class WeaponSettingInDungon : MonoBehaviour
 
     void Start()
     {
-
+        Cursor.SetCursor(customCursor, Vector2.zero, CursorMode.Auto);
     }
 
     // Update is called once per frame

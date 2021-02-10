@@ -11,6 +11,7 @@ public class DayEvent : MonoBehaviour
     void Start()
     {
         Ps = GameObject.FindObjectOfType<PlayerScript>();
+        Cursor.SetCursor(default, Vector2.zero, CursorMode.Auto);
     }
 
     // Update is called once per frame
