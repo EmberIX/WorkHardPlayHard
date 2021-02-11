@@ -13,26 +13,29 @@ public class SettingMenu : MonoBehaviour
 
     public Dropdown resolutionDropdown;
 
-    void start()
+    void Start ()
     {
         resolutions = Screen.resolutions;
+
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
-        for(int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + "x" + resolutions[i].height;
             options.Add(option);
 
-            if(resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
                 currentResolutionIndex = i;
             }
         }
 
         resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
     }
     public void SetVolume(float volume)
     {
@@ -50,9 +53,9 @@ public class SettingMenu : MonoBehaviour
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution res = resolutions[resolutionIndex];
+        Resolution resolution = resolutions[resolutionIndex];
 
-        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
-        
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+
     }
 }
