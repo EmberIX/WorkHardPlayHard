@@ -57,7 +57,7 @@ public class CounterBullet : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown("e") && CounterCooldown <= 0 && (bulletKeep > 0))
+        if(Input.GetKeyDown("e") && CounterCooldown <= 0 && (bulletKeep > 0) && PS.isInteracted == false)
         {
             isCounter = true;
             CounterTime = 0;
