@@ -50,6 +50,6 @@ public class CutScene : MonoBehaviour
     }
     void OpenNextCutScene()
     {
-
+        Instantiate(NextCG, transform.position, Quaternion.identity);
     }
 }
