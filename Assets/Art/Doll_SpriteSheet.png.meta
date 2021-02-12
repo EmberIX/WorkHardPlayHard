@@ -47,6 +47,51 @@ TextureImporter:
   - first:
       213: -5001112003465200795
     second: Doll_SpriteSheet_14
+  - first:
+      213: -4150205489888155877
+    second: Doll_SpriteSheet_15
+  - first:
+      213: -484584446814555799
+    second: Doll_SpriteSheet_16
+  - first:
+      213: -510845238739011004
+    second: Doll_SpriteSheet_17
+  - first:
+      213: 8612634210969205170
+    second: Doll_SpriteSheet_18
+  - first:
+      213: -2220646750152431452
+    second: Doll_SpriteSheet_19
+  - first:
+      213: -5101620647192352864
+    second: Doll_SpriteSheet_20
+  - first:
+      213: 5297109542256689096
+    second: Doll_SpriteSheet_21
+  - first:
+      213: -233995663346492313
+    second: Doll_SpriteSheet_22
+  - first:
+      213: 3416387703119189979
+    second: Doll_SpriteSheet_23
+  - first:
+      213: 4875114668086881414
+    second: Doll_SpriteSheet_24
+  - first:
+      213: -2674651974118653483
+    second: Doll_SpriteSheet_25
+  - first:
+      213: -3700080176156802768
+    second: Doll_SpriteSheet_26
+  - first:
+      213: -6240884738997387785
+    second: Doll_SpriteSheet_27
+  - first:
+      213: -6399534108507942886
+    second: Doll_SpriteSheet_28
+  - first:
+      213: 4487449935383245400
+    second: Doll_SpriteSheet_29
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -91,7 +136,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 20
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -224,8 +269,8 @@ TextureImporter:
       name: Doll_SpriteSheet_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 72
+        x: 72
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -245,8 +290,8 @@ TextureImporter:
       name: Doll_SpriteSheet_4
       rect:
         serializedVersion: 2
-        x: 24
-        y: 72
+        x: 96
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -266,8 +311,8 @@ TextureImporter:
       name: Doll_SpriteSheet_5
       rect:
         serializedVersion: 2
-        x: 48
-        y: 72
+        x: 120
+        y: 96
         width: 24
         height: 24
       alignment: 0
@@ -288,7 +333,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -309,7 +354,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 48
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -330,7 +375,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 48
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -350,8 +395,8 @@ TextureImporter:
       name: Doll_SpriteSheet_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 24
+        x: 72
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -371,8 +416,8 @@ TextureImporter:
       name: Doll_SpriteSheet_10
       rect:
         serializedVersion: 2
-        x: 24
-        y: 24
+        x: 96
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -392,8 +437,8 @@ TextureImporter:
       name: Doll_SpriteSheet_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 24
+        x: 120
+        y: 72
         width: 24
         height: 24
       alignment: 0
@@ -414,7 +459,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -435,7 +480,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 24
-        y: 0
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -456,7 +501,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 0
+        y: 48
         width: 24
         height: 24
       alignment: 0
@@ -468,6 +513,237 @@ TextureImporter:
       bones: []
       spriteID: 56bb38f312b789ab0800000000000000
       internalID: -5001112003465200795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17275e78128766c0800000000000000
+      internalID: -4150205489888155877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96170f753096649f0800000000000000
+      internalID: -484584446814555799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 48
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44af2c146fc19e8f0800000000000000
+      internalID: -510845238739011004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b93235ee29368770800000000000000
+      internalID: 8612634210969205170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 24
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a8e985db8dae21e0800000000000000
+      internalID: -2220646750152431452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a72d490d076339b0800000000000000
+      internalID: -5101620647192352864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfba8a301d138940800000000000000
+      internalID: 5297109542256689096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c10471f2ea0ccf0800000000000000
+      internalID: -233995663346492313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd79e63e382796f20800000000000000
+      internalID: 3416387703119189979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68c6d9e06f2e7a340800000000000000
+      internalID: 4875114668086881414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doll_SpriteSheet_25
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 0
+        width: 24
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d14cd0533ab1ead0800000000000000
+      internalID: -2674651974118653483
       vertices: []
       indices: 
       edges: []
