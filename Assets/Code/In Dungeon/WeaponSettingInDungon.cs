@@ -28,7 +28,9 @@ public class WeaponSettingInDungon : MonoBehaviour
 
     void Start()
     {
-        Cursor.SetCursor(customCursor, Vector2.zero, CursorMode.Auto);
+        Vector2 cursoroffset = new Vector2(customCursor.width / 2, customCursor.height / 2);
+        Cursor.SetCursor(customCursor, cursoroffset, CursorMode.Auto);
+        
     }
 
     // Update is called once per frame

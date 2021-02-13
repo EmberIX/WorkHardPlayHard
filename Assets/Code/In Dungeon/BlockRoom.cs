@@ -42,7 +42,8 @@ public class BlockRoom : MonoBehaviour
             print("Clear");
             Barrior.SetActive(false);
             Barrior2.SetActive(false);
-
+            Instantiate(dust, Barrior.transform.position, Quaternion.identity);
+            Instantiate(dust, Barrior2.transform.position, Quaternion.identity);
             Destroy(this);
         }
 
@@ -63,9 +64,9 @@ public class BlockRoom : MonoBehaviour
         {
             Barrior.SetActive(true);
             Barrior2.SetActive(true);
-
             Instantiate(dust, Barrior.transform.position, Quaternion.identity);
             Instantiate(dust, Barrior2.transform.position, Quaternion.identity);
+            this.GetComponent<Collider2D>().enabled = false;
         }
     }
 }
