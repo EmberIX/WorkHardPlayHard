@@ -43,6 +43,8 @@ public class Pause : MonoBehaviour
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Ps.isInteracted = false;
+
     }
 
     public void PPause()
@@ -50,6 +52,7 @@ public class Pause : MonoBehaviour
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Ps.isInteracted = true;
 
     }
 

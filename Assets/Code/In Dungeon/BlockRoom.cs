@@ -8,6 +8,7 @@ public class BlockRoom : MonoBehaviour
     public GameObject Barrior;
     public GameObject Barrior2;
     public GameObject[] EnemyTraget;
+    public ParticleSystem dust;
     public int enemyIndex = 0;
 
     void Start()
@@ -62,6 +63,9 @@ public class BlockRoom : MonoBehaviour
         {
             Barrior.SetActive(true);
             Barrior2.SetActive(true);
+
+            Instantiate(dust, Barrior.transform.position, Quaternion.identity);
+            Instantiate(dust, Barrior2.transform.position, Quaternion.identity);
         }
     }
 }
