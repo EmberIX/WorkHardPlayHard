@@ -36,8 +36,18 @@ public class BlockRoom : MonoBehaviour
 
         //    Destroy(this);
         //}
-        
-        if (enemyIndex >= EnemyTraget.Length)
+        bool enemyDead = true;
+
+        foreach (GameObject enemy in EnemyTraget)
+        {
+            if (enemy != null)
+            {
+                enemyDead = false;
+                break;
+            }
+        }
+
+        if (enemyDead)
         {
             print("Clear");
             Barrior.SetActive(false);
@@ -47,13 +57,13 @@ public class BlockRoom : MonoBehaviour
             Destroy(this);
         }
 
-        for (enemyIndex = 0; EnemyTraget[enemyIndex] == null; enemyIndex++)
-        {
-            if (enemyIndex == EnemyTraget.Length)
-            {
-                break;
-            }
-        }
+        //for (enemyIndex = 0; EnemyTraget[enemyIndex] == null; enemyIndex++)
+        //{
+        //    if (enemyIndex == EnemyTraget.Length)
+        //    {
+        //        break;
+        //    }
+        //}
 
 
     }
