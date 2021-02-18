@@ -38,7 +38,7 @@ public class StartGame : MonoBehaviour
         PS.SavePlayer();
         IT.SaveData();
 
-        Instantiate(CutScene, transform.position, Quaternion.identity);
+        CS.LoadScene("OpenCS");
     }
 
     public void Continue()
