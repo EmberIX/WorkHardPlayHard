@@ -7,10 +7,12 @@ public class NoteBookPick : MonoBehaviour
 
     public GameObject noteBook;
     public PlayerScript PS;
+    ChangeScene CS;
 
     void Start()
     {
         PS = GameObject.FindObjectOfType<PlayerScript>();
+        CS = GameObject.FindObjectOfType<ChangeScene>();
     }
 
     // Update is called once per frame
@@ -22,9 +24,10 @@ public class NoteBookPick : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Instantiate(noteBook, transform.position, Quaternion.identity);
             PS.weapon = "noteBook";
             Destroy(this.gameObject);
+            CS.LoadScene("Tutorial2");
+
         }
     }
 }

@@ -49,7 +49,6 @@ public class BlockRoom : MonoBehaviour
 
         if (enemyDead)
         {
-            print("Clear");
             Barrior.SetActive(false);
             Barrior2.SetActive(false);
             Instantiate(dust, Barrior.transform.position, Quaternion.identity);
