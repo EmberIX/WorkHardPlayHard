@@ -39,6 +39,12 @@ public class Boss_HP : MonoBehaviour
         HPBar.fillAmount = HP / MaxHP;
     }
 
+    public void BeginrFight()
+    {
+        isIFlame = false;
+        HPB.SetActive(true);
+    }
+
     void Die()
     {
         Destroy(GameObject.FindGameObjectWithTag("BigSlime"));

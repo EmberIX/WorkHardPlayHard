@@ -73,6 +73,7 @@ MonoBehaviour:
   sB: {fileID: 0}
   tr: {fileID: 1720166743139206440}
   BSS: {fileID: 0}
+  B: {fileID: 0}
   isCloseRange: 0
 --- !u!1 &1720166742093452283
 GameObject:
@@ -257,6 +258,7 @@ MonoBehaviour:
   ATKCount: 0
   StartATK: 2
   Damage: 2
+  BulletOut: 1
   isRange: 0
   isSight: 0
   isAttacking: 0
@@ -269,6 +271,7 @@ MonoBehaviour:
   Right: 0
   errorBullet: {fileID: 897844491684919165, guid: c30ef9d2948b8814a889fa1b35db036b, type: 3}
   damageP: {fileID: 0}
+  Ps: {fileID: 0}
 --- !u!1 &7996436810940264398
 GameObject:
   m_ObjectHideFlags: 0
