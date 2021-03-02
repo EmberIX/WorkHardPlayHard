@@ -8509,7 +8509,7 @@ GameObject:
   - component: {fileID: 614117142}
   m_Layer: 0
   m_Name: BossTBot
-  m_TagString: Untagged
+  m_TagString: Bot_Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28863,6 +28863,18 @@ PrefabInstance:
     - target: {fileID: 2616210375427101331, guid: 192f385299b240244a6d13dbd31c4d1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616210375427101356, guid: 192f385299b240244a6d13dbd31c4d1b, type: 3}
+      propertyPath: errorBulletDirection
+      value: 
+      objectReference: {fileID: 897844491684919165, guid: 0b9dbc489f1c82746b9697bc4412a5c3, type: 3}
+    - target: {fileID: 2616210375427101356, guid: 192f385299b240244a6d13dbd31c4d1b, type: 3}
+      propertyPath: attack4Side
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616210375427101356, guid: 192f385299b240244a6d13dbd31c4d1b, type: 3}
+      propertyPath: bulletUse
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 192f385299b240244a6d13dbd31c4d1b, type: 3}

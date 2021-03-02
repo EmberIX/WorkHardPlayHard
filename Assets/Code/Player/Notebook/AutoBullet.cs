@@ -76,6 +76,14 @@ public class AutoBullet : MonoBehaviour
             Instantiate(damageP, transform.position, Quaternion.identity);
         }
 
+        if (other.CompareTag("Bot_Boss"))
+        {
+
+            DestroyProjectile();
+            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 4));
+            Instantiate(damageP, transform.position, Quaternion.identity);
+        }
+
     }
 
     void DestroyProjectile()

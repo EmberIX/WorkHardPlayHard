@@ -65,6 +65,14 @@ public class SpearAttack : MonoBehaviour
 
         }
 
+        if (other.CompareTag("Bot_Boss") && isSp == false)
+        {
+
+            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
+            Instantiate(damageP, SpearHead.position, Quaternion.identity);
+
+        }
+
     }
 
 

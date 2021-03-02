@@ -54,5 +54,14 @@ public class AutoBulletHold : MonoBehaviour
             AB.target = other.transform;
         }
 
+        if (other.CompareTag("Boss"))
+        {
+            AB.target = other.transform;
+        }
+
+        if (other.CompareTag("BotBoss"))
+        {
+            AB.target = other.transform;
+        }
     }
 }

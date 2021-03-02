@@ -52,8 +52,14 @@ public class Bot_Boss : MonoBehaviour
 
     public void Attack1()
     {
-        Instantiate(shooter, shooterA.position, Quaternion.identity);
-        Instantiate(shooter, shooterB.position, Quaternion.identity);
+        GameObject attack1 = Instantiate(shooter, shooterA.position, Quaternion.identity);
+        attack1 = Instantiate(shooter, shooterB.position, Quaternion.identity);
+
+        attack1.GetComponent<BossBulletShoot>().bulletUse = 1;
+        //attack1.GetComponent<BossBulletShoot>().Damage = 4;
+        attack1.GetComponent<BossBulletShoot>().BulletOut = 4;
+        attack1.GetComponent<BossBulletShoot>().StartATK = 0.3f;
+        attack1.GetComponent<BossBulletShoot>().shootingEnd = 3;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

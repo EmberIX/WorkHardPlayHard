@@ -117,22 +117,22 @@ public class PlayerMoveMent : MonoBehaviour
                 //transform.position = Vector2.MoveTowards(transform.position, currentPosition + (movement * dashSpeed2) , dashDistance);
                 if (Input.GetKey("w") || Input.GetKey("a"))
                 {
-                    rb.AddForce((transform.up + (-transform.right)) * (dashSpeed2));
+                    rb.AddForce((transform.up + (-transform.right)).normalized * (dashSpeed));
                 }
 
                 if (Input.GetKey("w") || Input.GetKey("d"))
                 {
-                    rb.AddForce((transform.up + (transform.right)) * (dashSpeed2));
+                    rb.AddForce((transform.up + (transform.right)).normalized * (dashSpeed));
                 }
 
                 if (Input.GetKey("s") || Input.GetKey("d"))
                 {
-                    rb.AddForce(((-transform.up) + (transform.right)) * (dashSpeed2));
+                    rb.AddForce(((-transform.up) + (transform.right)).normalized * (dashSpeed));
                 }
 
                 if (Input.GetKey("s") || Input.GetKey("a"))
                 {
-                    rb.AddForce(((-transform.up) + ((-transform.right))) * (dashSpeed2));
+                    rb.AddForce(((-transform.up) + ((-transform.right))).normalized * (dashSpeed));
                 }
             }
             if (!SideWalk)

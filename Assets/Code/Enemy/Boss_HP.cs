@@ -17,9 +17,10 @@ public class Boss_HP : MonoBehaviour
     private void Start()
     {
         Ps = GameObject.FindObjectOfType<PlayerScript>();
+        HP = MaxHP;
     }
 
-    void TakeDamage(float amount)
+    public void TakeDamage(float amount)
     {
         if(isIFlame)
         {
@@ -27,8 +28,8 @@ public class Boss_HP : MonoBehaviour
         }
 
         HP -= amount;
-
-        if(HP <= 0)
+        SetHPBar();
+        if (HP <= 0)
         {
             Die();
         }

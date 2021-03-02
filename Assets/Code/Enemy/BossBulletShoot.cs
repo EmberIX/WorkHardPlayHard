@@ -8,23 +8,26 @@ public class BossBulletShoot : MonoBehaviour
     public float StartATK;
     public int Damage;
     public float speed;
-    public float BulletOut = 5;
+    public float BulletOut = 4;
 
     public bool isAttacking;
     public float prepareAttack;
     public float readyAttack;
     public Vector2 Direaction;
 
-    public bool Up;
+    public bool Up = true;
     public bool Down;
     public bool Left;
     public bool Right;
 
     public Vector3 rotate;
-    public bool attack4Side;
     Vector2 target;
-    public GameObject errorBullet;
-    public GameObject errorBullet2;
+
+    public int bulletUse;
+    // 1 = Direction 2 = ToPlayer 3 = Shoot4Sides
+    public GameObject errorBulletDirection;
+    public GameObject errorBulletToPlayer;
+    
     public PlayerScript Ps;
 
     public Transform shooter;
@@ -65,21 +68,20 @@ public class BossBulletShoot : MonoBehaviour
             if (isAttacking == true)
             {
                 //ani.SetTrigger("Attack");
-                if (errorBullet != null)
+                if (bulletUse == 0)
                 {
-                    if(attack4Side)
-                    {
-                        Attack4Side();
-                    }
-                    else
-                    Attack();
+                    AttackDirection();
                 }
-                if (errorBullet2 != null)
+                if (bulletUse == 1)
                 {
-                    Attack2();
+                    AttackPlayer();
+                }
+                if (bulletUse == 2)
+                {
+                    Attack4Side();
                 }
 
-                shootingNum++;
+                    shootingNum++;
                 isAttacking = false;
                 ATKCount = 0;
             }
@@ -91,17 +93,17 @@ public class BossBulletShoot : MonoBehaviour
         }
     }
 
-    public void Attack()
+    public void AttackDirection()
     {
-        GameObject Bullet = Instantiate(errorBullet, shooter.position, Quaternion.identity);
+        GameObject Bullet = Instantiate(errorBulletDirection, shooter.position, Quaternion.identity);
         Bullet.GetComponent<TrapBullet>().targetDirection = Direaction;
         Bullet.GetComponent<TrapBullet>().Damage = Damage;
         Bullet.GetComponent<TrapBullet>().bulletOut = BulletOut;
     }
 
-    public void Attack2()
+    public void AttackPlayer()
     {
-        GameObject Bullet = Instantiate(errorBullet2, shooter.position, Quaternion.identity);
+        GameObject Bullet = Instantiate(errorBulletToPlayer, shooter.position, Quaternion.identity);
         Bullet.GetComponent<EnemyBullet>().Damage = Damage;
         Bullet.GetComponent<EnemyBullet>().bulletOut = BulletOut;
         Bullet.GetComponent<EnemyBullet>().speed = speed;
@@ -109,22 +111,22 @@ public class BossBulletShoot : MonoBehaviour
 
     public void Attack4Side()
     {
-        GameObject Bullet = Instantiate(errorBullet, shooter.position, Quaternion.identity);
+        GameObject Bullet = Instantiate(errorBulletDirection, shooter.position, Quaternion.identity);
         Bullet.GetComponent<TrapBullet>().targetDirection = (transform.up).normalized * 8;        
         Bullet.GetComponent<TrapBullet>().Damage = Damage;
         Bullet.GetComponent<TrapBullet>().bulletOut = BulletOut;
 
-        GameObject Bullet2 = Instantiate(errorBullet, shooter.position, Quaternion.identity);
+        GameObject Bullet2 = Instantiate(errorBulletDirection, shooter.position, Quaternion.identity);
         Bullet2.GetComponent<TrapBullet>().targetDirection = (-transform.up).normalized * 8;
         Bullet2.GetComponent<TrapBullet>().Damage = Damage;
         Bullet2.GetComponent<TrapBullet>().bulletOut = BulletOut;
 
-        GameObject Bullet3 = Instantiate(errorBullet, shooter.position, Quaternion.identity);
+        GameObject Bullet3 = Instantiate(errorBulletDirection, shooter.position, Quaternion.identity);
         Bullet3.GetComponent<TrapBullet>().targetDirection = (-transform.right).normalized * 8;
         Bullet3.GetComponent<TrapBullet>().Damage = Damage;
         Bullet3.GetComponent<TrapBullet>().bulletOut = BulletOut;        
         
-        GameObject Bullet4 = Instantiate(errorBullet, shooter.position, Quaternion.identity);
+        GameObject Bullet4 = Instantiate(errorBulletDirection, shooter.position, Quaternion.identity);
         Bullet4.GetComponent<TrapBullet>().targetDirection = (transform.right).normalized * 8;
         Bullet4.GetComponent<TrapBullet>().Damage = Damage;
         Bullet4.GetComponent<TrapBullet>().bulletOut = BulletOut;

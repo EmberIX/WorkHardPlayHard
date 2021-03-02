@@ -9870,9 +9870,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ATKCount: 0
   StartATK: 0.3
-  Damage: 3
+  Damage: 4
   speed: 12
-  BulletOut: 5
+  BulletOut: 4
   isAttacking: 0
   prepareAttack: 0
   readyAttack: 0
@@ -9882,9 +9882,9 @@ MonoBehaviour:
   Left: 0
   Right: 0
   rotate: {x: 0, y: 0, z: 0}
-  attack4Side: 0
-  errorBullet: {fileID: 0}
-  errorBullet2: {fileID: 897844491684919165, guid: 1918b5aa0fce3c840ab2c132af2e859c, type: 3}
+  bulletUse: 1
+  errorBulletDirection: {fileID: 897844491684919165, guid: c30ef9d2948b8814a889fa1b35db036b, type: 3}
+  errorBulletToPlayer: {fileID: 897844491684919165, guid: 1918b5aa0fce3c840ab2c132af2e859c, type: 3}
   Ps: {fileID: 0}
   shooter: {fileID: 2616210376313785150}
   shootingNum: 0

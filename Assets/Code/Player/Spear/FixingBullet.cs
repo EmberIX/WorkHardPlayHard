@@ -86,6 +86,16 @@ public class FixingBullet : MonoBehaviour
             SS.Durability += (Damage + (Ps.ATK * 1 / 4));
             SS.SetSpearBar();
         }
+
+        if (other.CompareTag("Bot_Boss"))
+        {
+
+            DestroyProjectile();
+            other.gameObject.GetComponent<Boss_HP>().TakeDamage(Damage + (Ps.ATK * 1 / 4));
+            Instantiate(DamagePar, transform.position, Quaternion.identity);
+            SS.Durability += (Damage + (Ps.ATK * 1 / 4));
+            SS.SetSpearBar();
+        }
     }
 
     void DestroyProjectile()

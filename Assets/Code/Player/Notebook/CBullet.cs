@@ -55,6 +55,14 @@ public class CBullet : MonoBehaviour
 
         }
 
+        if (other.CompareTag("Bot_Boss") && isSp == false)
+        {
+
+            DestroyProjectile();
+            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 3.5f));
+            Instantiate(damageP, transform.position, Quaternion.identity);
+
+        }
 
         if (other.CompareTag("smallBug") && isSp)
         {
@@ -79,6 +87,15 @@ public class CBullet : MonoBehaviour
 
             DestroyProjectile();
             other.gameObject.GetComponent<Boss>().TakeDamage(damage + (Ps.ATK * 1 / 2));
+            Instantiate(Burst, transform.position, Quaternion.identity);
+
+        }
+
+        if (other.CompareTag("Bot_Boss") && isSp)
+        {
+
+            DestroyProjectile();
+            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
             Instantiate(Burst, transform.position, Quaternion.identity);
 
         }

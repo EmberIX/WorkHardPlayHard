@@ -26,6 +26,7 @@ TagManager:
   - Boss
   - EndBed
   - PlayerAudio
+  - Bot_Boss
   layers:
   - Default
   - TransparentFX

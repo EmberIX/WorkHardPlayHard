@@ -80,6 +80,7 @@ public class PlayerScript : MonoBehaviour
 
         if (HP <= 0)
         {
+            isdashing = true;
             SoundManagerScript.PlaySound(SoundManagerScript.die);
             FL = GameObject.FindObjectOfType<FinishLevel>();
             StartCoroutine(cS.Shake(.06f, .05f));
