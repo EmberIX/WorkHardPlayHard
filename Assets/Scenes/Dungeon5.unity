@@ -6005,6 +6005,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  dust: {fileID: 3022172372557141657, guid: f7e15cd4e9115ca4bacead2617444856, type: 3}
   enemyIndex: 0
 --- !u!4 &445291795
 Transform:

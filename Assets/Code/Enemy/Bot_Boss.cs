@@ -45,6 +45,12 @@ public class Bot_Boss : MonoBehaviour
         StartCoroutine(WaittoAttack(i));
         ani.SetBool("Attack1", true);
     }
+
+    public void StopAttack(string attack)
+    {
+        ani.SetBool(attack, false);
+    }
+
     public void Stage2()
     {
 
@@ -60,6 +66,7 @@ public class Bot_Boss : MonoBehaviour
         attack1.GetComponent<BossBulletShoot>().BulletOut = 4;
         attack1.GetComponent<BossBulletShoot>().StartATK = 0.3f;
         attack1.GetComponent<BossBulletShoot>().shootingEnd = 3;
+
     }
 
     public void OnTriggerEnter2D(Collider2D other)
