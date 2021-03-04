@@ -11136,6 +11136,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  dust: {fileID: 3022172372557141657, guid: f7e15cd4e9115ca4bacead2617444856, type: 3}
   enemyIndex: 0
 --- !u!4 &445291795
 Transform:
@@ -20459,6 +20460,7 @@ MonoBehaviour:
   - {fileID: 38081446}
   - {fileID: 0}
   - {fileID: 0}
+  dust: {fileID: 3022172372557141657, guid: f7e15cd4e9115ca4bacead2617444856, type: 3}
   enemyIndex: 0
 --- !u!4 &841757950
 Transform:
@@ -24617,6 +24619,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  dust: {fileID: 3022172372557141657, guid: f7e15cd4e9115ca4bacead2617444856, type: 3}
   enemyIndex: 0
 --- !u!4 &1284526411
 Transform:
@@ -30371,6 +30374,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  dust: {fileID: 3022172372557141657, guid: f7e15cd4e9115ca4bacead2617444856, type: 3}
   enemyIndex: 0
 --- !u!4 &1394021158
 Transform:
@@ -34682,6 +34686,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  dust: {fileID: 3022172372557141657, guid: f7e15cd4e9115ca4bacead2617444856, type: 3}
   enemyIndex: 0
 --- !u!4 &1819684196
 Transform:

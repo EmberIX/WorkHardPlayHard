@@ -69,7 +69,7 @@ public class SecretLevel : MonoBehaviour
     {
         Ps.SavePlayer();
         IT.SaveData();
-        Cs.LoadScene(level);
+        Cs.LoadScene(Cs.LevelToLoad);
     }
     public void Resume()
     {
