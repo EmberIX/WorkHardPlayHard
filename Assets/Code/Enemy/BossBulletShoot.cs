@@ -13,7 +13,7 @@ public class BossBulletShoot : MonoBehaviour
     public bool isAttacking;
     public float prepareAttack;
     public float readyAttack;
-    public Vector2 Direaction;
+    public Vector3 Direaction;
 
     public bool Up = true;
     public bool Down;
@@ -21,6 +21,8 @@ public class BossBulletShoot : MonoBehaviour
     public bool Right;
 
     public Vector3 rotate;
+    public bool rotating;
+    public float rotateSpeed;
     Vector2 target;
 
     public int bulletUse;
@@ -80,6 +82,10 @@ public class BossBulletShoot : MonoBehaviour
                 {
                     Attack4Side();
                 }
+                if(rotating)
+                {
+                    this.transform.Rotate(rotate * rotateSpeed * Time.deltaTime);
+                }
 
                     shootingNum++;
                 isAttacking = false;
@@ -99,6 +105,7 @@ public class BossBulletShoot : MonoBehaviour
         Bullet.GetComponent<TrapBullet>().targetDirection = Direaction;
         Bullet.GetComponent<TrapBullet>().Damage = Damage;
         Bullet.GetComponent<TrapBullet>().bulletOut = BulletOut;
+        Bullet.GetComponent<TrapBullet>().speed = speed;
     }
 
     public void AttackPlayer()
@@ -130,7 +137,5 @@ public class BossBulletShoot : MonoBehaviour
         Bullet4.GetComponent<TrapBullet>().targetDirection = (transform.right).normalized * 8;
         Bullet4.GetComponent<TrapBullet>().Damage = Damage;
         Bullet4.GetComponent<TrapBullet>().bulletOut = BulletOut;
-
-
     }
 }

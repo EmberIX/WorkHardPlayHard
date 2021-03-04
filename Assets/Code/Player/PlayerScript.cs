@@ -86,9 +86,9 @@ public class PlayerScript : MonoBehaviour
             StartCoroutine(cS.Shake(.06f, .05f));
             isDead = true;
             Cs = GameObject.FindObjectOfType<ChangeScene>();
-            if (Cs.LevelToLoad == "Dungeon5")
+            if (Cs.LevelToLoad == "Dungeon5" || Cs.LevelToLoad == "BossDungeon")
             {
-                Cs.LoadScene("Dungeon5");
+                Cs.LoadScene(Cs.LevelToLoad);
             }
             else
             FL.LevelEnd();

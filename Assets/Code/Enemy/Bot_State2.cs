@@ -2,24 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bot_Idle : StateMachineBehaviour
+public class Bot_State2 : StateMachineBehaviour
 {
     int random;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        random = Random.Range(1, 4);
+        random = Random.Range(4, 7);
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         Bot_Boss B_B = Animator.FindObjectOfType<Bot_Boss>();
 
-            B_B.prepareAttack(1, "Attack"+random);
+        B_B.prepareAttack(0.6f, "Attack" + random);
 
         Boss_HP B_H = Animator.FindObjectOfType<Boss_HP>();
-        if(B_H.HP <= B_H.MaxHP/2)
+        if (B_H.HP <= 0)
         {
-            animator.SetBool("State2", true);
+            animator.SetBool("Dying", true);
         }
     }
 
@@ -27,5 +27,4 @@ public class Bot_Idle : StateMachineBehaviour
     {
 
     }
-
 }

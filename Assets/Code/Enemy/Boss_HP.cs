@@ -29,10 +29,10 @@ public class Boss_HP : MonoBehaviour
 
         HP -= amount;
         SetHPBar();
-        if (HP <= 0)
-        {
-            Die();
-        }
+        //if (HP <= 0)
+        //{
+        //    Die();
+        //}
     }
 
     public void SetHPBar()
