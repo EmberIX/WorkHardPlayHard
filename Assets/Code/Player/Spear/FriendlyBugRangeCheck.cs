@@ -20,7 +20,7 @@ public class FriendlyBugRangeCheck : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if ((collision.tag == ("Boss") || collision.tag == ("BigSlime") || collision.tag == ("Enemy") || collision.tag == ("smallBug") && this.tag == ("RangeCheck")))
+        if ((collision.tag == ("Boss") || collision.tag == ("Bot_Boss") || collision.tag == ("BigSlime") || collision.tag == ("Enemy") || collision.tag == ("smallBug") && this.tag == ("RangeCheck")))
         {
             if (SB != null)
             {
@@ -34,7 +34,7 @@ public class FriendlyBugRangeCheck : MonoBehaviour
             }
         }
 
-        if ((collision.tag == ("Boss") || collision.tag == ("BigSlime") || collision.tag == ("Enemy")) || collision.tag == ("smallBug") && this.tag == ("SightCheck"))
+        if ((collision.tag == ("Boss") || collision.tag == ("Bot_Boss") ||  collision.tag == ("BigSlime") || collision.tag == ("Enemy")) || collision.tag == ("smallBug") && this.tag == ("SightCheck"))
         {
             if (SB != null)
             {
@@ -50,7 +50,7 @@ public class FriendlyBugRangeCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if ((collision.tag == ("Boss") || collision.tag == ("BigSlime") || collision.tag == ("Enemy")) || collision.tag == ("smallBug") && this.tag == ("RangeCheck"))
+        if ((collision.tag == ("Boss") || collision.tag == ("Bot_Boss") || collision.tag == ("BigSlime") || collision.tag == ("Enemy")) || collision.tag == ("smallBug") && this.tag == ("RangeCheck"))
         {
             if (SB != null)
             {
@@ -63,7 +63,7 @@ public class FriendlyBugRangeCheck : MonoBehaviour
             }
         }
 
-        if ((collision.tag == ("Boss") || collision.tag == ("BigSlime") || collision.tag == ("Enemy")) || collision.tag == ("smallBug") && this.tag == ("SightCheck"))
+        if ((collision.tag == ("Boss") || collision.tag == ("Bot_Boss") || collision.tag == ("BigSlime") || collision.tag == ("Enemy")) || collision.tag == ("smallBug") && this.tag == ("SightCheck"))
         {
             if (SB != null)
             {
