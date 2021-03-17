@@ -8583,12 +8583,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  MaxHP: 1000
+  MaxHP: 1200
   HPB: {fileID: 145181955}
   HPBar: {fileID: 1522894579}
   TakeHit: 0
   isIFlame: 0
-  Ps: {fileID: 0}
 --- !u!114 &614117138
 MonoBehaviour:
   m_ObjectHideFlags: 0

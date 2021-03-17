@@ -13,10 +13,8 @@ public class Boss_HP : MonoBehaviour
     public bool TakeHit;
     
     public bool isIFlame;
-    public PlayerScript Ps;
     private void Start()
     {
-        Ps = GameObject.FindObjectOfType<PlayerScript>();
         HP = MaxHP;
     }
 
@@ -29,10 +27,6 @@ public class Boss_HP : MonoBehaviour
 
         HP -= amount;
         SetHPBar();
-        //if (HP <= 0)
-        //{
-        //    Die();
-        //}
     }
 
     public void SetHPBar()
@@ -46,20 +40,4 @@ public class Boss_HP : MonoBehaviour
         HPB.SetActive(true);
     }
 
-    void Die()
-    {
-        Destroy(GameObject.FindGameObjectWithTag("BigSlime"));
-        Destroy(GameObject.FindGameObjectWithTag("smallBug"));
-        Destroy(GameObject.FindObjectOfType<Trap>());
-        Destroy(GameObject.FindObjectOfType<EnemyBullet>());
-        Destroy(HPB);
-
-        Destroy(this.gameObject);
-
-        SoundManagerScript.PlaySound(SoundManagerScript.enemyDie);
-        if (Ps != null)
-        {
-            Ps.HP = Ps.MaxHP;
-        }
-    }
 }
