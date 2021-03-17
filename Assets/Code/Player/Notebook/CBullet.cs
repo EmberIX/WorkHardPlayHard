@@ -7,8 +7,8 @@ public class CBullet : MonoBehaviour
     public float damage;
     public float bulletTime = 0f;
     public bool isSp;
-    public ParticleSystem damageP;
-    public ParticleSystem Burst;
+    public GameObject damageP;
+    public GameObject Burst;
     public PlayerScript Ps;
     void Start()
     {
@@ -28,77 +28,26 @@ public class CBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("smallBug") && isSp == false)
+        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss") || other.CompareTag("Bot_Boss"))
         {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<smallBug>().TakeDamage(damage + (Ps.ATK * 1 / 3.5f));  
-            Instantiate(damageP, transform.position, Quaternion.identity);
-
+            if (isSp == false)
+            {
+                DestroyProjectile();
+                other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK * 1 / 3.5f));
+                Instantiate(damageP, transform.position, Quaternion.identity);
+            }
         }
 
-        if (other.CompareTag("BigSlime") && isSp == false)
+        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss")|| other.CompareTag("Bot_Boss") && isSp)
         {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<BigSlimeScript>().TakeDamage(damage + (Ps.ATK * 1 / 3.5f));
-            Instantiate(damageP, transform.position, Quaternion.identity);
-
+            if (isSp)
+            {
+                DestroyProjectile();
+                other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
+                Instantiate(Burst, transform.position, Quaternion.identity);
+            }
         }
 
-        if (other.CompareTag("Boss") && isSp == false)
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss>().TakeDamage(damage + (Ps.ATK * 1 / 3.5f));
-            Instantiate(damageP, transform.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("Bot_Boss") && isSp == false)
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 3.5f));
-            Instantiate(damageP, transform.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("smallBug") && isSp)
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<smallBug>().TakeDamage(damage + (Ps.ATK * 1 / 2));
-            Instantiate(Burst, transform.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("BigSlime") && isSp)
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<BigSlimeScript>().TakeDamage(damage + (Ps.ATK * 1 / 2));
-            Instantiate(Burst, transform.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("Boss") && isSp)
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss>().TakeDamage(damage + (Ps.ATK * 1 / 2));
-            Instantiate(Burst, transform.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("Bot_Boss") && isSp)
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
-            Instantiate(Burst, transform.position, Quaternion.identity);
-
-        }
     }
 
     void DestroyProjectile()

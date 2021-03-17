@@ -4950,6 +4950,6 @@ MonoBehaviour:
   damage: 3.5
   bulletTime: 5.5
   isSp: 0
-  damageP: {fileID: 2459311644488286021, guid: 80a9c60cc5857154987ce6e3a91a154e, type: 3}
-  Burst: {fileID: 0}
+  damageP: {fileID: 8925632332206833519, guid: 80a9c60cc5857154987ce6e3a91a154e, type: 3}
+  Burst: {fileID: 3972398799272803851, guid: fe3442509d9022342834167ff9223197, type: 3}
   Ps: {fileID: 0}

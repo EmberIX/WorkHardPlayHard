@@ -20,7 +20,7 @@ public class Bot_Idle : StateMachineBehaviour
         B_B.prepareAttack(1, "Attack" + random);
         pRandom = random;
     
-        Boss_HP B_H = Animator.FindObjectOfType<Boss_HP>();
+        Enemy_HP B_H = Animator.FindObjectOfType<Bot_Boss>().B_H;
         if(B_H.HP <= B_H.MaxHP/2)
         {
             animator.SetBool("State2", true);

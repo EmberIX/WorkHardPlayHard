@@ -4,16 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using Pathfinding;
 
-public class Boss : MonoBehaviour
+public class Slime_Boss : MonoBehaviour
 {
-    public float HP;
-    public float MaxHP;
     public float speed;
     public float ATKCount;
     public float StartATK;
-    public int Damage;
-    public GameObject HPB;
-    public Image HPBar;
     public float expDrop;
 
     public bool isRange;
@@ -21,10 +16,9 @@ public class Boss : MonoBehaviour
     public bool isSight;
     public bool isAttacking;
     public float readyAttack;
-    public bool TakeHit;
     Vector2 target;
     public Rigidbody2D rb;
-
+    public Enemy_HP E_H;
     public GameObject errorBullet;
     public GameObject errorBullet2;
     public GameObject errorBlast;
@@ -39,7 +33,6 @@ public class Boss : MonoBehaviour
     public Transform player;
     public PlayerScript Ps;
     public FinishLevel FL;
-    public ParticleSystem damageP;
     public GameObject EndBed;
 
     public bool State1;
@@ -53,14 +46,19 @@ public class Boss : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         FL = GameObject.FindObjectOfType<FinishLevel>();
         Ps = GameObject.FindObjectOfType<PlayerScript>();
-        HP = MaxHP;
-        SetHPBar();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        E_H = GetComponentInChildren<Enemy_HP>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (E_H.HP <= 0)
+        {
+            Die();
+            return;
+        }
+
         if (Ps.isDead != true)
         {
             if (player != null)
@@ -98,23 +96,40 @@ public class Boss : MonoBehaviour
                     isAttacking = false;
                     ATKCount = 0;
                 }
-
-                //if (closeRange == true)
-                //{
-                //    Attack2();
-                //    isAttacking = false;
-                //    ATKCount = 0;
-                //}
             }
-
             
         }
-    }
-    public void SetHPBar()
-    {
-        HPBar.fillAmount = HP / MaxHP;
-    }
 
+        if (E_H.HP <= 300)
+        {
+            if (E_H.HP <= 250)
+            {
+                if (E_H.HP <= 100)
+                {
+                    if (!State3)
+                    {
+                        ATKCount = 0;
+                        Attack2();
+                        State3 = true;
+                    }
+
+                }
+                else if (!State2)
+                {
+                    ATKCount = 0;
+                    Attack2();
+                    State2 = true;
+                }
+
+            }
+            else if (!State1)
+            {
+                ATKCount = 0;
+                Attack2();
+                State1 = true;
+            }
+        }
+    }
 
     public void Attack()
     {
@@ -192,62 +207,18 @@ public class Boss : MonoBehaviour
 
     }
 
-    public void TakeDamage(float amount)
+    public void Die()
     {
-        //ani.SetTrigger("Damage");
-        //Instantiate(damageP, transform.position, Quaternion.identity);
-        HP -= amount;
-        SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
-        SetHPBar();
-        //ani.SetTrigger("Damage");
-        //SetHPBar();
-        if(HP <= 300)
-        {
-            if(HP<= 200)
-            {
-                if(HP <= 100)
-                {
-                    if (!State3)
-                    {
-                        ATKCount = 0;
-                        Attack2();
-                        State3 = true;
-                    }
+        Destroy(GameObject.FindGameObjectWithTag("BigSlime"));
+        Destroy(GameObject.FindGameObjectWithTag("smallBug"));
+        Destroy(GameObject.FindObjectOfType<Trap>());
+        Destroy(GameObject.FindObjectOfType<EnemyBullet>());
+        Destroy(E_H.HPB);
+        Destroy(this.gameObject);
 
-                }
-                else if (!State2)
-                {
-                    ATKCount = 0;
-                    Attack2();
-                    State2 = true;
-                }
+        Instantiate(EndBed, transform.position, Quaternion.identity);
 
-            }
-            else if(!State1)
-            {
-                ATKCount = 0;
-                Attack2();
-                State1 = true;
-            }
-        }
-
-        if (HP <= 0)
-        {
-            Destroy(GameObject.FindGameObjectWithTag("BigSlime"));
-            Destroy(GameObject.FindGameObjectWithTag("smallBug"));
-            Destroy(GameObject.FindObjectOfType<Trap>());
-            Destroy(GameObject.FindObjectOfType<EnemyBullet>());
-            Destroy(HPB);
-            Destroy(this.gameObject);
-            Instantiate(EndBed, transform.position, Quaternion.identity);
-
-            SoundManagerScript.PlaySound(SoundManagerScript.enemyDie);
-            if (Ps != null)
-            {
-                Ps.HP = Ps.MaxHP;
-                FL.exp += expDrop;
-            }
-        }
+        SoundManagerScript.PlaySound(SoundManagerScript.enemyDie);
     }
 
 }

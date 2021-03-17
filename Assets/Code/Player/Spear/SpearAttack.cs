@@ -41,34 +41,10 @@ public class SpearAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("smallBug") && isSp == false)
+        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss") || other.CompareTag("Bot_Boss") && isSp == false)
         {
 
-            other.gameObject.GetComponent<smallBug>().TakeDamage(damage + (Ps.ATK*1/2));
-            Instantiate(damageP, SpearHead.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("BigSlime") && isSp == false)
-        {
-
-            other.gameObject.GetComponent<BigSlimeScript>().TakeDamage(damage + (Ps.ATK * 1 / 2));
-            Instantiate(damageP, SpearHead.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("Boss") && isSp == false)
-        {
-
-            other.gameObject.GetComponent<Boss>().TakeDamage(damage + (Ps.ATK * 1 / 2));
-            Instantiate(damageP, SpearHead.position, Quaternion.identity);
-
-        }
-
-        if (other.CompareTag("Bot_Boss") && isSp == false)
-        {
-
-            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
+            other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK*1/2));
             Instantiate(damageP, SpearHead.position, Quaternion.identity);
 
         }

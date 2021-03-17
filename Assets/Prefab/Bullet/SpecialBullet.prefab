@@ -9866,8 +9866,8 @@ MonoBehaviour:
   damage: 12
   bulletTime: 5
   isSp: 1
-  damageP: {fileID: 0}
-  Burst: {fileID: 2660162813048096204, guid: fe3442509d9022342834167ff9223197, type: 3}
+  damageP: {fileID: 8925632332206833519, guid: 80a9c60cc5857154987ce6e3a91a154e, type: 3}
+  Burst: {fileID: 3972398799272803851, guid: fe3442509d9022342834167ff9223197, type: 3}
   Ps: {fileID: 0}
 --- !u!58 &-3684043319921820393
 CircleCollider2D:

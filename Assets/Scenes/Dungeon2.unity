@@ -22071,7 +22071,7 @@ GameObject:
   - component: {fileID: 1302858893}
   - component: {fileID: 1302858892}
   - component: {fileID: 1302858894}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneWallTileSet_22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -30613,7 +30613,7 @@ GameObject:
   - component: {fileID: 1638820871}
   - component: {fileID: 1638820870}
   - component: {fileID: 1638820872}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StoneWallTileSet_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}

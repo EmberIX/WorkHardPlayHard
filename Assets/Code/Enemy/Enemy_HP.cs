@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Boss_HP : MonoBehaviour
+public class Enemy_HP : MonoBehaviour
 {
     public float HP;
     public float MaxHP;
@@ -24,7 +24,8 @@ public class Boss_HP : MonoBehaviour
         {
             return;
         }
-
+        
+        SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
         HP -= amount;
         SetHPBar();
     }

@@ -6,7 +6,7 @@ public class Bot_Boss : MonoBehaviour
 {
     public Transform player;
     public PlayerScript Ps;
-    Boss_HP B_H;
+    public Enemy_HP B_H;
 
     Vector2 target;
     Animator ani;
@@ -21,7 +21,7 @@ public class Bot_Boss : MonoBehaviour
     {
         Ps = GameObject.FindObjectOfType<PlayerScript>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        B_H = GameObject.FindObjectOfType<Boss_HP>();
+        B_H = GetComponentInChildren<Enemy_HP>();
         ani = GetComponentInChildren<Animator>();
     }
 

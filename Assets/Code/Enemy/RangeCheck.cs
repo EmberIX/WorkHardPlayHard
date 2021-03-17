@@ -7,7 +7,7 @@ public class RangeCheck : MonoBehaviour
     public smallBug sB;
     public Trap tr;
     public BigSlimeScript BSS;
-    public Boss B;
+    public Slime_Boss B;
     public bool isCloseRange;
 
     void Start()
@@ -56,7 +56,7 @@ public class RangeCheck : MonoBehaviour
             if (B != null)
             {
                 B.isSight = true;
-                B.HPB.SetActive(true);
+                B.E_H.HPB.SetActive(true);
             }
         }
 

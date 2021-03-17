@@ -47,51 +47,12 @@ public class FixingBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+
+        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss") || other.CompareTag("Bot_Boss"))
         {
 
             DestroyProjectile();
-            //other.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
-            Instantiate(DamagePar, transform.position, Quaternion.identity);
-            SS.Durability += (Damage + (Ps.ATK * 1/4));
-            SS.SetSpearBar();
-        }
-
-        if (other.CompareTag("smallBug"))
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<smallBug>().TakeDamage(Damage + (Ps.ATK * 1 / 4));
-            Instantiate(DamagePar, transform.position, Quaternion.identity);
-            SS.Durability += (Damage + (Ps.ATK * 1 / 4));
-            SS.SetSpearBar();
-        }
-
-        if (other.CompareTag("BigSlime"))
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<BigSlimeScript>().TakeDamage(Damage + (Ps.ATK * 1 / 4));
-            Instantiate(DamagePar, transform.position, Quaternion.identity);
-            SS.Durability += (Damage + (Ps.ATK * 1 / 4));
-            SS.SetSpearBar();
-        }
-
-        if (other.CompareTag("Boss"))
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss>().TakeDamage(Damage + (Ps.ATK * 1 / 4));
-            Instantiate(DamagePar, transform.position, Quaternion.identity);
-            SS.Durability += (Damage + (Ps.ATK * 1 / 4));
-            SS.SetSpearBar();
-        }
-
-        if (other.CompareTag("Bot_Boss"))
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss_HP>().TakeDamage(Damage + (Ps.ATK * 1 / 4));
+            other.gameObject.GetComponent<Enemy_HP>().TakeDamage(Damage + (Ps.ATK * 1 / 4));
             Instantiate(DamagePar, transform.position, Quaternion.identity);
             SS.Durability += (Damage + (Ps.ATK * 1 / 4));
             SS.SetSpearBar();

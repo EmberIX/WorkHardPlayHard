@@ -8,13 +8,10 @@ public class smallBug : MonoBehaviour
 {
     //If player in sight, move till the player in range.
     //If the player in range, start attacking player.
-    public float HP;
-    public float MaxHP;
+    
     public float speed;
     public float ATKCount;
     public float StartATK;
-    public int Damage;
-    public Image HPBar;
     public float expDrop;
 
     public bool isRange;
@@ -25,7 +22,7 @@ public class smallBug : MonoBehaviour
     public bool TakeHit;
     Vector2 target;
     public Rigidbody2D rb;
-
+    Enemy_HP E_H;
     public GameObject errorBullet;
     public Animation attack;
     public Animator ani;
@@ -34,7 +31,6 @@ public class smallBug : MonoBehaviour
     public Transform player;
     public PlayerScript Ps;
 
-    public ParticleSystem damageP;
     public FinishLevel FL;
 
     public AIPath AP;
@@ -44,15 +40,19 @@ public class smallBug : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         FL = GameObject.FindObjectOfType<FinishLevel>();
         Ps = GameObject.FindObjectOfType<PlayerScript>();
-        HP = MaxHP;
-        SetHPBar();
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        //this.spriteRenderer = this.GetComponent<SpriteRenderer>();
+        E_H = GetComponentInChildren<Enemy_HP>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(E_H.HP <= 0)
+        {
+            Die();
+            return;
+        }
+
         if (player != null)
         {
             target = new Vector2(player.position.x, player.position.y);
@@ -61,7 +61,6 @@ public class smallBug : MonoBehaviour
 
         if (isSight && (isRange == false) && player != null && isAttacking == false)
         { 
-            //transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
             AP.enabled = true;
             
         }
@@ -77,19 +76,10 @@ public class smallBug : MonoBehaviour
             if (ATKCount >= StartATK)
             {
                 isAttacking = true;
-                //prepareAttack += Time.deltaTime;
 
-                //if (prepareAttack >= readyAttack)
-                //{
-                //    Attack();
-                //    ATKCount = 0;
-                //}
             }            
-            
  
         }
-
-
 
         if (isAttacking == true)
         {
@@ -97,10 +87,6 @@ public class smallBug : MonoBehaviour
             isAttacking = false;
             ATKCount = 0;
         }
-    }
-    public void SetHPBar()
-    {
-        HPBar.fillAmount = HP / MaxHP;
     }
     public void Attack()
     {
@@ -111,25 +97,15 @@ public class smallBug : MonoBehaviour
             prepareAttack = 0;
         }
     }
-
-    public void TakeDamage(float amount)
+    public void Die()
     {
-        //ani.SetTrigger("Damage");
-        //Instantiate(damageP, transform.position, Quaternion.identity);
-        HP -= amount;
-        SetHPBar();
-        SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
-        //ani.SetTrigger("Damage");
-        //SetHPBar();
 
-        if (HP <= 0)
+        SoundManagerScript.PlaySound(SoundManagerScript.enemyDie);
+        Destroy(this.gameObject);
+        if (Ps != null)
         {
-            SoundManagerScript.PlaySound(SoundManagerScript.enemyDie);
-            Destroy(this.gameObject);
-            if (Ps != null)
-            {
-                FL.exp += expDrop;
-            }
+            FL.exp += expDrop;
         }
+    
     }
 }

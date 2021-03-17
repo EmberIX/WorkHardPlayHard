@@ -39,48 +39,16 @@ public class AutoBullet : MonoBehaviour
 
         PR.speed = 4;
 
-        //bulletTime += Time.deltaTime;
-
-        //if (bulletTime >= 10)
-        //{
-        //    DestroyProjectile();
-        //}
-
-
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag("smallBug"))
+        if (other.CompareTag("smallBug")|| other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss")|| other.CompareTag("Bot_Boss"))
         {
 
             DestroyProjectile();
-            other.gameObject.GetComponent<smallBug>().TakeDamage(damage + (Ps.ATK * 1 / 4));
-            Instantiate(damageP, transform.position, Quaternion.identity);
-        }
-
-        if (other.CompareTag("BigSlime"))
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<BigSlimeScript>().TakeDamage(damage + (Ps.ATK * 1 / 4));
-            Instantiate(damageP, transform.position, Quaternion.identity);
-        }
-
-        if (other.CompareTag("Boss"))
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss>().TakeDamage(damage + (Ps.ATK * 1 / 4));
-            Instantiate(damageP, transform.position, Quaternion.identity);
-        }
-
-        if (other.CompareTag("Bot_Boss"))
-        {
-
-            DestroyProjectile();
-            other.gameObject.GetComponent<Boss_HP>().TakeDamage(damage + (Ps.ATK * 1 / 4));
+            other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK * 1 / 4));
             Instantiate(damageP, transform.position, Quaternion.identity);
         }
 

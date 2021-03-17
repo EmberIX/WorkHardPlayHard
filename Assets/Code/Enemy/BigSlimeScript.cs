@@ -6,13 +6,10 @@ using Pathfinding;
 
 public class BigSlimeScript : MonoBehaviour
 {
-    public float HP;
-    public float MaxHP;
     public float speed;
     public float ATKCount;
     public float StartATK;
-    public int Damage;
-    public Image HPBar;
+
     public float expDrop;
 
     public bool isRange;
@@ -21,21 +18,18 @@ public class BigSlimeScript : MonoBehaviour
     public bool isAttacking;
     public float prepareAttack;
     public float readyAttack;
-    public bool TakeHit;
     Vector2 target;
     public Rigidbody2D rb;
-
+    Enemy_HP E_H;
     public GameObject errorBullet;
     public GameObject errorBullet2;
     public GameObject errorBlast;
     public Animation attack;
     public Animator ani;
 
-    //public SpriteRenderer spriteRenderer;
     public Transform player;
     public PlayerScript Ps;
     public FinishLevel FL;
-    public ParticleSystem damageP;
 
     public AIPath AP;
 
@@ -44,20 +38,25 @@ public class BigSlimeScript : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         FL = GameObject.FindObjectOfType<FinishLevel>();
         Ps = GameObject.FindObjectOfType<PlayerScript>();
-        HP = MaxHP;
-        SetHPBar();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        E_H = GetComponentInChildren<Enemy_HP>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
+        if (E_H.HP <= 0)
+        {
+            Die();
+            return;
+        }
+
         if (Ps.isDead != true)
         {
             if (player != null)
             {
                 target = new Vector2(player.position.x, player.position.y);
-                //this.spriteRenderer.flipX = player.transform.position.x > this.transform.position.x;
+
             }
 
             if (isSight && (isRange == false) && player != null && isAttacking == false)
@@ -99,18 +98,13 @@ public class BigSlimeScript : MonoBehaviour
             }
         }
     }
-    public void SetHPBar()
-    {
-        HPBar.fillAmount = HP / MaxHP;
-    }
+
 
 
     public void Attack()
     {
         ani.SetTrigger("Attack1");
         StartCoroutine(Wait());
-        //StartCoroutine(Wait());
-        //StartCoroutine(Wait());
 
         IEnumerator Wait()
         {
@@ -144,24 +138,15 @@ public class BigSlimeScript : MonoBehaviour
 
     }
 
-    public void TakeDamage(float amount)
+    public void Die()
     {
-        //ani.SetTrigger("Damage");
-        //Instantiate(damageP, transform.position, Quaternion.identity);
-        HP -= amount;
-        SetHPBar();
-        //ani.SetTrigger("Damage");
-        //SetHPBar();
-        SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
-        if (HP <= 0)
-        {
-            SoundManagerScript.PlaySound(SoundManagerScript.enemyDie);
-            Destroy(this.gameObject);
-            if (Ps != null)
-            {
-                FL.exp += expDrop;
-            }
-        }
-    }
 
+        SoundManagerScript.PlaySound(SoundManagerScript.enemyDie);
+        Destroy(this.gameObject);
+        if (Ps != null)
+        {
+            FL.exp += expDrop;
+        }
+
+    }
 }
