@@ -42,9 +42,11 @@ public class AutoBulletHold : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
+        print("Aim");
 
-        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss") || other.CompareTag("Bot_Boss"))
+        if (other.CompareTag("Bot_Boss") || other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss"))
         {
+            print("Aim at " + other.tag);
             AB.target = other.transform;
             
         }

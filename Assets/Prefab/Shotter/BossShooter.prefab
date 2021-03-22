@@ -9871,7 +9871,7 @@ MonoBehaviour:
   ATKCount: 0
   StartATK: 0.3
   Damage: 4
-  speed: 12
+  speed: 10
   BulletOut: 4
   isAttacking: 0
   prepareAttack: 0
