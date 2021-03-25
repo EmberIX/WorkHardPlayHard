@@ -48,7 +48,7 @@ public class FixingBullet : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss") || other.CompareTag("Bot_Boss"))
+        if (other.TryGetComponent(out Enemy_HP enemy_HP) == true)
         {
 
             DestroyProjectile();

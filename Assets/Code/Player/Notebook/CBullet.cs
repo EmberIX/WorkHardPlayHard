@@ -28,7 +28,7 @@ public class CBullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss") || other.CompareTag("Bot_Boss"))
+        if (other.TryGetComponent(out Enemy_HP enemy_HP) == true)
         {
             if (isSp == false)
             {
@@ -36,17 +36,19 @@ public class CBullet : MonoBehaviour
                 other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK * 1 / 3.5f));
                 Instantiate(damageP, transform.position, Quaternion.identity);
             }
-        }
-
-        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss")|| other.CompareTag("Bot_Boss") && isSp)
-        {
-            if (isSp)
+            
+            else if (isSp)
             {
                 DestroyProjectile();
                 other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
                 Instantiate(Burst, transform.position, Quaternion.identity);
             }
+
         }
+
+
+
+
 
     }
 

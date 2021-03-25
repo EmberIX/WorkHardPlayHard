@@ -42,9 +42,8 @@ public class AutoBulletHold : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        print("Aim");
 
-        if (other.CompareTag("Bot_Boss") || other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss"))
+        if (other.TryGetComponent(out Enemy_HP enemy_HP) == true)
         {
             print("Aim at " + other.tag);
             AB.target = other.transform;

@@ -67,10 +67,10 @@ public class Bot_Boss : MonoBehaviour
 
         attack1.GetComponent<BossBulletShoot>().bulletUse = 1;
         //attack1.GetComponent<BossBulletShoot>().Damage = 4;
-        attack1.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack1.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack1.GetComponent<BossBulletShoot>().StartATK = 0.3f;
         attack1.GetComponent<BossBulletShoot>().shootingEnd = 3;
-        attack1.GetComponent<BossBulletShoot>().speed = 8;
+        attack1.GetComponent<BossBulletShoot>().speed = 7;
 
     }
     public void Attack2()
@@ -79,13 +79,13 @@ public class Bot_Boss : MonoBehaviour
         attack2 = Instantiate(shooter, shooterA.position, Quaternion.identity);
         attack2.GetComponent<BossBulletShoot>().bulletUse = 2;
         attack2.GetComponent<BossBulletShoot>().shootingEnd = 1;
-        attack2.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack2.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack2.GetComponent<BossBulletShoot>().StartATK = 0.3f;
 
         attack2 = Instantiate(shooter, shooterB.position, Quaternion.identity);
         attack2.GetComponent<BossBulletShoot>().bulletUse = 2;
         attack2.GetComponent<BossBulletShoot>().shootingEnd = 1;
-        attack2.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack2.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack2.GetComponent<BossBulletShoot>().StartATK = 0.3f;
     }
     public void Attack5()
@@ -95,14 +95,14 @@ public class Bot_Boss : MonoBehaviour
         attack5 = Instantiate(purpleShooter, shooterA.position, Quaternion.identity);
         attack5.GetComponent<BossBulletShoot>().bulletUse = 1;
         attack5.GetComponent<BossBulletShoot>().shootingEnd = 1;
-        attack5.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack5.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack5.GetComponent<BossBulletShoot>().StartATK = 0.1f;
         attack5.GetComponent<BossBulletShoot>().speed = 5.5f;
 
         attack5 = Instantiate(purpleShooter, shooterB.position, Quaternion.identity);
         attack5.GetComponent<BossBulletShoot>().bulletUse = 1;
         attack5.GetComponent<BossBulletShoot>().shootingEnd = 1;
-        attack5.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack5.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack5.GetComponent<BossBulletShoot>().StartATK = 0.1f;
         attack5.GetComponent<BossBulletShoot>().speed = 5.5f;
 
@@ -120,7 +120,7 @@ public class Bot_Boss : MonoBehaviour
         attack3.GetComponent<BossBulletShoot>().rotating = true;
         attack3.GetComponent<BossBulletShoot>().rotateSpeed = 30;
         attack3.GetComponent<BossBulletShoot>().shootingEnd = 15;
-        attack3.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack3.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack3.GetComponent<BossBulletShoot>().StartATK = 0.2f;
         attack3.GetComponent<BossBulletShoot>().speed = 4.5f;
         
@@ -134,7 +134,7 @@ public class Bot_Boss : MonoBehaviour
             attack3.GetComponent<BossBulletShoot>().rotating = true;
             attack3.GetComponent<BossBulletShoot>().rotateSpeed = 30;
             attack3.GetComponent<BossBulletShoot>().shootingEnd = 15;
-            attack3.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+            attack3.GetComponent<BossBulletShoot>().BulletOut = 2f;
             attack3.GetComponent<BossBulletShoot>().StartATK = 0.2f;
             attack3.GetComponent<BossBulletShoot>().speed = 4.5f;
 
@@ -149,7 +149,7 @@ public class Bot_Boss : MonoBehaviour
         GameObject attack1 = Instantiate(purpleShooter, shooterA.position, Quaternion.identity);
         attack1.GetComponent<BossBulletShoot>().bulletUse = 1;
         //attack1.GetComponent<BossBulletShoot>().Damage = 4;
-        attack1.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack1.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack1.GetComponent<BossBulletShoot>().StartATK = 0.3f;
         attack1.GetComponent<BossBulletShoot>().shootingEnd = 3;
 
@@ -157,7 +157,7 @@ public class Bot_Boss : MonoBehaviour
 
         attack1.GetComponent<BossBulletShoot>().bulletUse = 1;
         //attack1.GetComponent<BossBulletShoot>().Damage = 4;
-        attack1.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack1.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack1.GetComponent<BossBulletShoot>().StartATK = 0.3f;
         attack1.GetComponent<BossBulletShoot>().shootingEnd = 3;
 
@@ -182,14 +182,14 @@ public class Bot_Boss : MonoBehaviour
         attack3.GetComponent<BossBulletShoot>().rotating = true;
         attack3.GetComponent<BossBulletShoot>().rotateSpeed = 20;
         attack3.GetComponent<BossBulletShoot>().shootingEnd = 15;
-        attack3.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack3.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack3.GetComponent<BossBulletShoot>().StartATK = 0.2f;
         attack3.GetComponent<BossBulletShoot>().speed = 4.5f;
 
         attack3 = Instantiate(purpleShooter, shooterB.position, Quaternion.identity);
         attack3.GetComponent<BossBulletShoot>().bulletUse = 2;
         attack3.GetComponent<BossBulletShoot>().shootingEnd = 15;
-        attack3.GetComponent<BossBulletShoot>().BulletOut = 2.5f;
+        attack3.GetComponent<BossBulletShoot>().BulletOut = 2f;
         attack3.GetComponent<BossBulletShoot>().StartATK = 0.2f;
         attack3.GetComponent<BossBulletShoot>().speed = 4.5f;
 

@@ -41,7 +41,7 @@ public class SpearAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("smallBug") || other.CompareTag("BigSlime") || other.CompareTag("Slime_Boss") || other.CompareTag("Bot_Boss") && isSp == false)
+        if (other.TryGetComponent(out Enemy_HP enemy_HP) == true && isSp == false)
         {
 
             other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK*1/2));

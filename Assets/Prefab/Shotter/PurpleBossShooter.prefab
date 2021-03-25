@@ -9872,7 +9872,7 @@ MonoBehaviour:
   StartATK: 0.3
   Damage: 4
   speed: 10
-  BulletOut: 4
+  BulletOut: 2
   isAttacking: 0
   prepareAttack: 0
   readyAttack: 0

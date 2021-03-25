@@ -29,20 +29,23 @@ public class EquipItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(IT.itemList.Contains(itemName))
+        if (PS != null)
         {
-            Lock.SetActive(false);
-        }
-
-        if (sprite != null)
-        {
-            if (PS.itemUse != itemName)
+            if (IT.itemList.Contains(itemName))
             {
-                sprite.SetActive(false);
+                Lock.SetActive(false);
             }
-            if (PS.itemUse == itemName)
+
+            if (sprite != null)
             {
-                sprite.SetActive(true);
+                if (PS.itemUse != itemName)
+                {
+                    sprite.SetActive(false);
+                }
+                if (PS.itemUse == itemName)
+                {
+                    sprite.SetActive(true);
+                }
             }
         }
     }

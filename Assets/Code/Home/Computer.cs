@@ -30,41 +30,42 @@ public class Computer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        showEnergy.text = "Energy " + energy + "/" + PS.energy;
-
-        if(Input.GetKeyDown("p"))
+        if (PS != null)
         {
-            energy = 5000;
-        }
+            showEnergy.text = "Energy " + energy + "/" + PS.energy;
 
-        if (DesktopOn)
-        {
-            if (Input.GetKeyDown("e"))
+            if (Input.GetKeyDown("p"))
             {
-                DesktopOn = false;
-                DesktopMenu.SetActive(false);
-                PS.isInteracted = false;
-                E.SetActive(true);
-                return;
+                energy = 5000;
+            }
 
+            if (DesktopOn)
+            {
+                if (Input.GetKeyDown("e"))
+                {
+                    DesktopOn = false;
+                    DesktopMenu.SetActive(false);
+                    PS.isInteracted = false;
+                    E.SetActive(true);
+                    return;
+
+                }
+            }
+
+            if (isAtPosition)
+            {
+                if (Input.GetKeyDown("e") && DesktopOn == false)
+                {
+                    PS.SavePlayer();
+                    E.SetActive(false);
+                    SoundManagerScript.clickButton();
+                    DesktopOn = true;
+                    DesktopMenu.SetActive(true);
+                    PS.isInteracted = true;
+                    return;
+                }
             }
         }
-
-        if (isAtPosition)
-        {
-            if (Input.GetKeyDown("e") && DesktopOn == false)
-            {
-                PS.SavePlayer();
-                E.SetActive(false);
-                SoundManagerScript.clickButton();
-                DesktopOn = true;
-                DesktopMenu.SetActive(true);
-                PS.isInteracted = true;
-                return;
-            }
-        }
-
     }
 
     public void OpenShop()

@@ -30,21 +30,23 @@ public class LevelSellectMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        LevelProgress = Ps.progress;
-
-        if(LevelProgress < unlockLevel)
+        if (Ps != null)
         {
-            isLevelLock = true;
-        }
-        else
-        {
-            isLevelLock = false;
-        }
+            LevelProgress = Ps.progress;
 
-        if(isLevelLock)
-        {
-            ani.SetTrigger("Off");
+            if (LevelProgress < unlockLevel)
+            {
+                isLevelLock = true;
+            }
+            else
+            {
+                isLevelLock = false;
+            }
+
+            if (isLevelLock)
+            {
+                ani.SetTrigger("Off");
+            }
         }
         
     }

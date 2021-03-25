@@ -31,22 +31,25 @@ public class SecretLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Ps.itemUse == "WHPHdrive")
+        if (Ps != null)
         {
-            isLevelLock = false;
-        }
-        else
-        {
-            isLevelLock = true;
-        }
+            if (Ps.itemUse == "WHPHdrive")
+            {
+                isLevelLock = false;
+            }
+            else
+            {
+                isLevelLock = true;
+            }
 
-        if (isLevelLock)
-        {
-            ani.SetTrigger("Off");
-        }
-        else
-        {
-            ani.SetTrigger("On");
+            if (isLevelLock)
+            {
+                ani.SetTrigger("Off");
+            }
+            else
+            {
+                ani.SetTrigger("On");
+            }
         }
     }
 
