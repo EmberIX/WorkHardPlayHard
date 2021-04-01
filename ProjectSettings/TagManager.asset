@@ -28,6 +28,7 @@ TagManager:
   - Bot_Boss
   - Slime_Boss
   - Canvas_Work
+  - Player_Mini
   layers:
   - Default
   - TransparentFX

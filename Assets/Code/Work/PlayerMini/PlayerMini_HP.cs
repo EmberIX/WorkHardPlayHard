@@ -22,6 +22,7 @@ public class PlayerMini_HP : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
+        print("TakeDamage");
         if (isIFlame)
         {
             return;

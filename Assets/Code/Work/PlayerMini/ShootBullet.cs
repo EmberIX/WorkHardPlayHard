@@ -12,7 +12,7 @@ public class ShootBullet : MonoBehaviour
     public GameObject specialBullet;
     public Image energyBar;
 
-    public InputAction shoot;
+    //public InputAction shoot;
     public float energy;
     public float maxEnergy;
     // Start is called before the first frame update
@@ -26,15 +26,13 @@ public class ShootBullet : MonoBehaviour
     private void OnEnable()
     {
         //PC.PlayerMini.Shoot.performed += Shoot;
-        PC.Enable();
-        shoot.Enable();
+        //PC.Enable();
     }
 
     private void OnDisable()
     {
 
         PC.Disable();
-        shoot.Disable();
     }
 
     private void Shoot()
