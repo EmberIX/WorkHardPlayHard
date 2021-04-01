@@ -27,6 +27,7 @@ TagManager:
   - PlayerAudio
   - Bot_Boss
   - Slime_Boss
+  - Canvas_Work
   layers:
   - Default
   - TransparentFX

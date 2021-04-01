@@ -14,14 +14,10 @@ public class PlayerMini : MonoBehaviour
     {
         PC = new PlayerMini_Control();
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         TryGetComponent(out rb);
-
-
-        //movement = PC.PlayerMini.Movement.ReadValue<Vector2>();
-        //PC.PlayerMini.Movement.started +=
     }
 
     private void OnEnable()
@@ -38,15 +34,9 @@ public class PlayerMini : MonoBehaviour
 
     private void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("move");
-        //movement = direction;
-
-        //rb.MovePosition(rb.position + direction * currentSpeed * Time.fixedDeltaTime);
-
         movement = context.ReadValue<Vector2>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         //PC.PlayerMini.Movement.performed += ctx => Move(ctx.ReadValue<Vector2>());
