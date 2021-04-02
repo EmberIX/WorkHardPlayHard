@@ -32,7 +32,7 @@ public class @PlayerMini_Control : IInputActionCollection, IDisposable
                     ""id"": ""8f716140-e7f8-47a5-8b7d-0e455fabdd4d"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """"
+                    ""interactions"": ""Press""
                 },
                 {
                     ""name"": ""Research"",
@@ -111,7 +111,7 @@ public class @PlayerMini_Control : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""e2684e59-d5bb-4c4f-bf40-f50af3f0deaf"",
                     ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Shoot"",

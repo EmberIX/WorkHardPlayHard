@@ -10,6 +10,7 @@ public class CBullet_Work : MonoBehaviour
     public GameObject damageP;
     public GameObject Burst;
     public PlayerScript Ps;
+    private bool hasHit;
     void Start()
     {
         Ps = GameObject.FindObjectOfType<PlayerScript>();
@@ -30,6 +31,11 @@ public class CBullet_Work : MonoBehaviour
     {
         if (other.TryGetComponent(out Enemy_HP enemy_HP) == true)
         {
+            if(hasHit)
+            {
+                return;
+            }
+
             if (isSp == false)
             {
                 DestroyProjectile();
@@ -44,7 +50,7 @@ public class CBullet_Work : MonoBehaviour
                 other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
                 Instantiate(Burst, transform.position, Quaternion.identity);
             }
-
+            hasHit = true;
         }
 
     }

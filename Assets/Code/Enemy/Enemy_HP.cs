@@ -24,7 +24,7 @@ public class Enemy_HP : MonoBehaviour
         {
             return;
         }
-        
+        Debug.Log("Ahhhh");
         SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
         HP -= amount;
         SetHPBar();
