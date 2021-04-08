@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44e485c82cdaf754481cf86c8cc96e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
+  speed: 5
   player: {fileID: 0}
   Damage: 0
   bulletTime: 0
