@@ -20,6 +20,19 @@ public class PlayerMini_HP : MonoBehaviour
         HP = MaxHP;
     }
 
+    private void FixedUpdate()
+    {
+        if (TakeHit)
+        {
+            IFlameTime += Time.deltaTime;
+            if (IFlameTime >= 2)
+            {
+                IFlameTime = 0;
+                TakeHit = false;
+            }
+        }
+    }
+
     public void TakeDamage(float amount)
     {
         print("TakeDamage");
@@ -28,15 +41,6 @@ public class PlayerMini_HP : MonoBehaviour
             return;
         }
 
-        if (TakeHit)
-        {
-            IFlameTime = 0;
-            IFlameTime += Time.deltaTime;
-            if(IFlameTime >= 2)
-            {
-                TakeHit = false;
-            }
-        }
         else
         {
             SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
