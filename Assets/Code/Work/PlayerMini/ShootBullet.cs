@@ -7,11 +7,12 @@ using UnityEngine.InputSystem;
 public class ShootBullet : MonoBehaviour
 {
     public PlayerMini_Control PC;
+    CounterBullet_Work CW;
     public GameObject Bullet;
     public GameObject smallBullet;
     public GameObject specialBullet;
     public Image energyBar;
-
+    public GameObject ResearchOrb;
     //public InputAction shoot;
     public float energy;
     public float maxEnergy;
@@ -19,6 +20,7 @@ public class ShootBullet : MonoBehaviour
     private void Awake()
     {
         PC = new PlayerMini_Control();
+        CW = GameObject.FindObjectOfType<CounterBullet_Work>();
     }
 
     void Start()
@@ -31,6 +33,7 @@ public class ShootBullet : MonoBehaviour
     private void OnEnable()
     {
         PC.PlayerMini.Shoot.performed += Shoot;
+        PC.PlayerMini.Shoot_Special.performed += Shoot_Special;
         PC.Enable();
     }
 
@@ -54,19 +57,27 @@ public class ShootBullet : MonoBehaviour
         }
     }
 
+    private void Shoot_Special(InputAction.CallbackContext context)
+    {
+        if (CW.bulletKeep < CW.KeepMax)
+        {
+            Debug.Log("shoot Special!!");
+
+            GameObject bullet = Instantiate(specialBullet, transform.position, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = this.transform.up * 12f;
+            bullet.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas_Work").transform);
+            CW.bulletKeep += 1;
+            energy = maxEnergy;
+            Destroy(ResearchOrb);
+            SetEnergyBar();
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
+        ResearchOrb = GameObject.FindGameObjectWithTag("ResearchOrb");
 
-        //if (Input.GetButtonDown("Attack"))
-        //{
-        //    if (energy > 0)
-        //    {
-        //        Shoot();
-        //        energy -= 1;
-        //        SetEnergyBar();
-        //    }
-        //}
     }
 
     void SetEnergyBar()

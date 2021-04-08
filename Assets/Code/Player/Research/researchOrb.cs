@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class researchOrb : MonoBehaviour
 {
-    CounterBullet CB;
+    CounterBullet_Work CB;
     public Image I;
     void Start()
     {
-        CB = GameObject.FindObjectOfType<CounterBullet>();
+        CB = GameObject.FindObjectOfType<CounterBullet_Work>();
     }
 
     // Update is called once per frame

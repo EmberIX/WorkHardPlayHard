@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CounterBullert_Work : MonoBehaviour
+public class CounterBullet_Work : MonoBehaviour
 {
     public bool isCounter;
 
@@ -17,7 +17,7 @@ public class CounterBullert_Work : MonoBehaviour
 
     public ParticleSystem Shield;
     public ParticleSystem TakeBullet;
-    //public GameObject Bullet;
+    public GameObject Bullet;
 
     public GameObject[] UI;
     PlayerMini PM;
@@ -86,8 +86,10 @@ public class CounterBullert_Work : MonoBehaviour
                     bulletKeep -= 1;
                     SoundManagerScript.PlaySound(SoundManagerScript.Research);
                     Destroy(collision.gameObject);
-                    Instantiate(TakeBullet, transform.position, Quaternion.identity);
-                    //Instantiate(Bullet, transform.position, Quaternion.identity);
+                    ParticleSystem TakeBulletShow = Instantiate(TakeBullet, transform.position, Quaternion.identity);
+                    TakeBulletShow.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas_Work").transform);
+                    GameObject ResearchBullet = Instantiate(Bullet, transform.position, Quaternion.identity);
+                    ResearchBullet.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas_Work").transform);
                 }
             }
         }

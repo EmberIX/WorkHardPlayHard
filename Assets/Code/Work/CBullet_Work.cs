@@ -48,7 +48,8 @@ public class CBullet_Work : MonoBehaviour
             {
                 DestroyProjectile();
                 other.gameObject.GetComponent<Enemy_HP>().TakeDamage(damage + (Ps.ATK * 1 / 2));
-                Instantiate(Burst, transform.position, Quaternion.identity);
+                GameObject BurstShow = Instantiate(Burst, transform.position, Quaternion.identity);
+                BurstShow.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas_Work").transform);
             }
             hasHit = true;
         }

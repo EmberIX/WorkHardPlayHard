@@ -17,7 +17,7 @@ public class WorkBullet_Work : MonoBehaviour
     public ParticleSystem DamagePar;
     Rigidbody2D rb;
     PlayerMini PM;
-
+    bool hashit;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -51,6 +51,11 @@ public class WorkBullet_Work : MonoBehaviour
         if (other.CompareTag("Player_Mini"))
         {
 
+            if (hashit)
+            {
+                return;
+            }
+
             if (this.CompareTag("EnemyBullet"))
             {
                 DestroyProjectile();
@@ -58,6 +63,7 @@ public class WorkBullet_Work : MonoBehaviour
             other.gameObject.GetComponent<PlayerMini_HP>().TakeDamage(Damage);
             Instantiate(DamagePar, transform.position, Quaternion.identity);
 
+            hashit = true;
         }
 
     }
