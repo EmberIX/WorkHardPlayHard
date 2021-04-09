@@ -59,7 +59,7 @@ public class ShootBullet : MonoBehaviour
 
     private void Shoot_Special(InputAction.CallbackContext context)
     {
-        if (CW.bulletKeep < CW.KeepMax)
+        if (ResearchOrb != null)
         {
             Debug.Log("shoot Special!!");
 
