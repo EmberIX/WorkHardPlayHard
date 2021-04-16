@@ -14,6 +14,7 @@ public class PlayerMini_HP : MonoBehaviour
 
     public bool isIFlame;
     public float IFlameTime;
+    public Animator ani;
 
     void Start()
     {
@@ -44,6 +45,7 @@ public class PlayerMini_HP : MonoBehaviour
         else
         {
             SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
+            ani.SetTrigger("takeDamage");
             HP -= amount;
             SetHPBar();
             TakeHit = true;

@@ -61,7 +61,8 @@ public class WorkBullet_Work : MonoBehaviour
                 DestroyProjectile();
             }
             other.gameObject.GetComponent<PlayerMini_HP>().TakeDamage(Damage);
-            Instantiate(DamagePar, transform.position, Quaternion.identity);
+            ParticleSystem damageParticle = Instantiate(DamagePar, transform.position, Quaternion.identity);
+            damageParticle.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas_Work").transform);
 
             hashit = true;
         }
