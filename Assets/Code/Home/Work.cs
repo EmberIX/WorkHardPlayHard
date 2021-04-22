@@ -12,25 +12,30 @@ public class Work : MonoBehaviour
     Computer C;
     DayEvent DE;
 
+    [Header("Details")]
     public string workName;
     public int levelNeed;
     public int enegyNeed;
     public bool isFinish;
     public bool isLock;
-
     public Text unlockLevel;
-    public int money;
 
+    [Header("Give")]
+    public int money;
     public int ATK;
     public int Energy;
     public int HP;
     public int skillPoint;
 
+    [Header("Ref")]
     public GameObject WorkAni;
     public Text showText;
     public Text showText2;
     public GameObject TextBox1;
     public GameObject TextBox2;
+
+    [Header("Work")]
+    public GameObject WorkCanvas;
     void Start()
     {
         PS = GameObject.FindObjectOfType<PlayerScript>();
@@ -89,23 +94,8 @@ public class Work : MonoBehaviour
         if (C.energy >= enegyNeed && isLock == false && isFinish == false && DE.time != 2)
         {
             C.energy -= enegyNeed;
-            WorkAni.SetActive(false);
-            WorkAni.SetActive(true);
-            StartCoroutine(Wait());
-            IEnumerator Wait()
-            {
-                yield return new WaitForSeconds(0.5f);
-                SoundManagerScript.PlaySound(SoundManagerScript.getMoney);
+            StartWorking();
 
-            }
-            showText.text = "Work Done!!";
-            TextBox1.SetActive(false);
-            TextBox1.SetActive(true);
-            DE.time += 1;
-            isFinish = true;
-            IT.workList.Add(this.workName);
-            WorkFinsih();
-            //PS.SavePlayer();
         }
 
         else if (C.energy < enegyNeed && isLock == false && isFinish == false)
@@ -121,5 +111,52 @@ public class Work : MonoBehaviour
             TextBox2.SetActive(false);
             TextBox2.SetActive(true);
         }
-    }    
+    }
+
+    void StartWorking()
+    {
+        C.isWorking = true;
+        WorkCanvas.SetActive(true);
+
+
+    }
+
+    public void WorkSuccess()
+    {
+        WorkAni.SetActive(false);
+        WorkAni.SetActive(true);
+        StartCoroutine(Wait());
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(0.5f);
+            SoundManagerScript.PlaySound(SoundManagerScript.getMoney);
+
+        }
+        showText.text = "Work Done!!";
+        TextBox1.SetActive(false);
+        TextBox1.SetActive(true);
+        DE.time += 1;
+        isFinish = true;
+        IT.workList.Add(this.workName);
+        WorkCanvas.SetActive(false);
+
+        WorkFinsih();
+    }
+
+    public void WorkFail()
+    {
+        StartCoroutine(Wait());
+        IEnumerator Wait()
+        {
+            yield return new WaitForSeconds(0.5f);
+            SoundManagerScript.PlaySound(SoundManagerScript.getMoney);
+
+        }
+        showText.text = "Work Fail!!";
+        TextBox1.SetActive(false);
+        TextBox1.SetActive(true);
+        DE.time += 1;
+        WorkCanvas.SetActive(false);
+
+    }
 }

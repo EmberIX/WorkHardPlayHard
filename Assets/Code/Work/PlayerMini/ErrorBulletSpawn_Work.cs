@@ -12,26 +12,28 @@ public class ErrorBulletSpawn_Work : MonoBehaviour
     public float spawnRate = 2f;
     public float nextSpawn;
 
+    Enemy_HP EH;
     void Start()
     {
-        
+        EH = GetComponentInParent<Enemy_HP>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-       
-        if(Time.time > nextSpawn)
+        if (EH.HP > 0)
         {
-            nextSpawn = Time.time + spawnRate;
-            randomX = Random.Range(0f, 6f);
-            whereToSpawn = new Vector3(randomX, transform.position.y, transform.position.z);
-            
-            GameObject SpawnedBullet = Instantiate(bullet, whereToSpawn, Quaternion.identity);
-            SpawnedBullet.GetComponent<Rigidbody2D>().velocity = this.transform.up * 12f;
-            SpawnedBullet.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas_Work").transform);
-        }
+            if (Time.time > nextSpawn)
+            {
+                nextSpawn = Time.time + spawnRate;
+                randomX = Random.Range(0f, 6f);
+                whereToSpawn = new Vector3(randomX, transform.position.y, transform.position.z);
 
+                GameObject SpawnedBullet = Instantiate(bullet, whereToSpawn, Quaternion.identity);
+                SpawnedBullet.GetComponent<Rigidbody2D>().velocity = this.transform.up * 12f;
+                SpawnedBullet.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas_Work").transform);
+            }
+        }
     }
 }

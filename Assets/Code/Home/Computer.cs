@@ -14,6 +14,7 @@ public class Computer : MonoBehaviour
     public Text dateShow;
     public bool DesktopOn;
     public bool isAtPosition;
+    public bool isWorking;
 
     public float energy;
     public Text showEnergy;
@@ -39,7 +40,7 @@ public class Computer : MonoBehaviour
                 energy = 5000;
             }
 
-            if (DesktopOn)
+            if (DesktopOn && (isWorking == false))
             {
                 if (Input.GetKeyDown("e"))
                 {

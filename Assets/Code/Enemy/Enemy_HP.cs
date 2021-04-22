@@ -13,6 +13,7 @@ public class Enemy_HP : MonoBehaviour
     public bool TakeHit;
     
     public bool isIFlame;
+    public Animator ani;
     private void Start()
     {
         HP = MaxHP;
@@ -24,10 +25,13 @@ public class Enemy_HP : MonoBehaviour
         {
             return;
         }
-        Debug.Log("Ahhhh");
         SoundManagerScript.PlaySound(SoundManagerScript.enemyTakeDamage);
         HP -= amount;
         SetHPBar();
+        if(ani != null)
+        {
+            ani.SetTrigger("takeDamage");
+        }
     }
 
     public void SetHPBar()

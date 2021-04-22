@@ -36,6 +36,7 @@ public class WorkShooter : MonoBehaviour
     public int shootingNum;
     public int shootingEnd;
 
+    public Enemy_HP EH;
     void Start()
     {
         Ps = GameObject.FindObjectOfType<PlayerScript>();
@@ -57,6 +58,21 @@ public class WorkShooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if(EH.HP <= 0)
+        {
+            GameObject toDestroy = GameObject.FindGameObjectWithTag("PurpleBullet");
+            if (toDestroy != null)
+            {
+                Destroy(toDestroy);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+        }
+
         if (Ps.isDead != true)
         {
             ATKCount += Time.deltaTime;
@@ -108,6 +124,7 @@ public class WorkShooter : MonoBehaviour
         Bullet.GetComponent<TrapBullet>().Damage = Damage;
         Bullet.GetComponent<TrapBullet>().bulletOut = BulletOut;
         Bullet.GetComponent<TrapBullet>().speed = speed;
+
     }
 
     public void AttackPlayer()

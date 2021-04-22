@@ -4048,6 +4048,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &121055650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9739,6 +9740,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &266317586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13178,6 +13180,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &353526016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17501,6 +17504,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &458156269
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18755,9 +18759,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2616210374819426639, guid: 88c900ea7fdec2c40abdf167a275ef51, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2616210375353810265, guid: 88c900ea7fdec2c40abdf167a275ef51, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2616210375353810267, guid: 88c900ea7fdec2c40abdf167a275ef51, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2616210375427101330, guid: 88c900ea7fdec2c40abdf167a275ef51, type: 3}
       propertyPath: m_Name
@@ -18791,6 +18803,10 @@ PrefabInstance:
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5128396920477026049, guid: 88c900ea7fdec2c40abdf167a275ef51, type: 3}
+      propertyPath: EH
+      value: 
+      objectReference: {fileID: 1555956513}
     - target: {fileID: 7090883201935350468, guid: 88c900ea7fdec2c40abdf167a275ef51, type: 3}
       propertyPath: m_Scale3D.y
       value: 1
@@ -28179,6 +28195,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &745223599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28660,6 +28677,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &750913997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29348,6 +29366,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &761936121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33693,6 +33712,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &858647835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37757,6 +37777,7 @@ MonoBehaviour:
   dateShow: {fileID: 817559818}
   DesktopOn: 0
   isAtPosition: 0
+  isWorking: 0
   energy: 0
   showEnergy: {fileID: 172521958}
 --- !u!114 &941833959
@@ -38617,6 +38638,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &955214109
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42932,6 +42954,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1082953371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45398,6 +45421,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1143007110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45801,6 +45825,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1145408505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50625,6 +50650,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1255773822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62887,6 +62913,7 @@ MonoBehaviour:
   HPBar: {fileID: 121634779}
   TakeHit: 0
   isIFlame: 0
+  ani: {fileID: 1555956516}
 --- !u!50 &1555956514
 Rigidbody2D:
   serializedVersion: 4
@@ -64778,6 +64805,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1595077128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67982,6 +68010,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1631370700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69102,13 +69131,14 @@ GameObject:
   - component: {fileID: 1668539551}
   - component: {fileID: 1668539550}
   - component: {fileID: 1668539549}
+  - component: {fileID: 1668539553}
   m_Layer: 5
   m_Name: WorkingCanvas
   m_TagString: Canvas_Work
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1668539549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69201,6 +69231,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1668539553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668539548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64b495e3a6b3df41af6df210e45152c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choosenWork: {fileID: 2056353461}
 --- !u!1 &1668579127
 GameObject:
   m_ObjectHideFlags: 0
@@ -70873,7 +70916,7 @@ ParticleSystemRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741436089}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -78645,6 +78688,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1823595407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81097,6 +81141,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 0}
 --- !u!114 &1887174892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87646,6 +87691,7 @@ MonoBehaviour:
   showText2: {fileID: 817559818}
   TextBox1: {fileID: 952596508}
   TextBox2: {fileID: 152165256}
+  WorkCanvas: {fileID: 1668539548}
 --- !u!1 &2056604591
 GameObject:
   m_ObjectHideFlags: 0
@@ -88744,7 +88790,7 @@ RectTransform:
   m_GameObject: {fileID: 2080551647}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 107.943756, y: 107.943756, z: 107.943756}
   m_Children:
   - {fileID: 1741436090}
   m_Father: {fileID: 1668539552}
@@ -90359,7 +90405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7539812065345645022, guid: cbe2573834971a74d94d8cf84dca8a86, type: 3}
       propertyPath: isInteracted
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cbe2573834971a74d94d8cf84dca8a86, type: 3}
