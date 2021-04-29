@@ -32,7 +32,7 @@ public class WorkEngine : MonoBehaviour
             IEnumerator Wait()
             {
                 print("Work Success");
-                yield return new WaitForSeconds(3);
+                yield return new WaitForSeconds(2);
                 choosenWork.WorkSuccess();
             }
 
@@ -41,11 +41,13 @@ public class WorkEngine : MonoBehaviour
         if((T.timeLeft <= 0)||(PM_H.HP <= 0))
         {
             print("Work Fail");
-            ani.SetTrigger("FadeIn");
+            WorkAni.SetTrigger("PlayerLose");
+
+            ani.SetTrigger("Fail");
             StartCoroutine(Wait2());
             IEnumerator Wait2()
             {
-                yield return new WaitForSeconds(1.5f);
+                yield return new WaitForSeconds(2);
                 choosenWork.WorkFail();
                 T.timeLeft = T.timeMax;
                 EH.HP = EH.MaxHP;
