@@ -19,6 +19,7 @@ public class CounterBullet_Work : MonoBehaviour
     public ParticleSystem TakeBullet;
     public GameObject Bullet;
 
+    public Enemy_HP EH;
     public GameObject[] UI;
     PlayerMini PM;
     void Start()
@@ -44,7 +45,7 @@ public class CounterBullet_Work : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown("e") && CounterCooldown <= 0 && (bulletKeep > 0))
+        if (Input.GetKeyDown("e") && CounterCooldown <= 0 && (bulletKeep > 0) && EH.HP > 0)
         {
             isCounter = true;
             CounterTime = 0;

@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
     public Image timerBar;
     Enemy_HP workHP;
     public GameObject success;
+    public PlayerMini_HP PMH;
     void Start()
     {
         timeLeft = timeMax;
@@ -31,6 +32,7 @@ public class Timer : MonoBehaviour
         else
         {
             TimeOut();
+            PMH.TakeDamage(PMH.HP);
         }
     }
 

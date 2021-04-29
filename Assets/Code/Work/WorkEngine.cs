@@ -9,6 +9,10 @@ public class WorkEngine : MonoBehaviour
     Enemy_HP EH;
     Timer T;
     PlayerMini_HP PM_H;
+    
+    public Animator ani;
+    public Animator WorkAni;
+    public Animator PlayerAni;
 
     void Start()
     {
@@ -16,21 +20,37 @@ public class WorkEngine : MonoBehaviour
         T = GetComponentInChildren<Timer>();
         PM_H = GetComponentInChildren<PlayerMini_HP>();
 
-
     }
 
-    void Update()
+    void LateUpdate()
     {
         if(EH.HP <= 0 )
         {
-            print("Work Success");
-            choosenWork.WorkSuccess();
+            WorkAni.SetTrigger("Shake");
+            ani.SetTrigger("Success");
+            StartCoroutine(Wait());
+            IEnumerator Wait()
+            {
+                print("Work Success");
+                yield return new WaitForSeconds(3);
+                choosenWork.WorkSuccess();
+            }
+
         }
 
         if((T.timeLeft <= 0)||(PM_H.HP <= 0))
         {
             print("Work Fail");
-            choosenWork.WorkFail();
+            ani.SetTrigger("FadeIn");
+            StartCoroutine(Wait2());
+            IEnumerator Wait2()
+            {
+                yield return new WaitForSeconds(1.5f);
+                choosenWork.WorkFail();
+                T.timeLeft = T.timeMax;
+                EH.HP = EH.MaxHP;
+                PM_H.HP = PM_H.MaxHP;
+            }
         }
     }
 }

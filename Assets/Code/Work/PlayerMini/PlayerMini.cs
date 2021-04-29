@@ -9,6 +9,8 @@ public class PlayerMini : MonoBehaviour
     public Rigidbody2D rb;
     public float currentSpeed;
     public Vector2 movement;
+    public Enemy_HP EH;
+    public PlayerMini_HP PMH;
 
     private void Awake()
     {
@@ -18,6 +20,7 @@ public class PlayerMini : MonoBehaviour
     void Start()
     {
         TryGetComponent(out rb);
+        PMH = GetComponentInParent<PlayerMini_HP>();
     }
 
     private void OnEnable()
@@ -34,6 +37,7 @@ public class PlayerMini : MonoBehaviour
 
     private void Move(InputAction.CallbackContext context)
     {
+        if(PMH.HP > 0 || EH.HP > 0)
         movement = context.ReadValue<Vector2>();
     }
 

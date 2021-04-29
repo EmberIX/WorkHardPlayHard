@@ -7,12 +7,14 @@ using UnityEngine.InputSystem;
 public class ShootBullet : MonoBehaviour
 {
     public PlayerMini_Control PC;
+    PlayerScript PS;
     CounterBullet_Work CW;
     public GameObject Bullet;
     public GameObject smallBullet;
     public GameObject specialBullet;
     public Image energyBar;
     public GameObject ResearchOrb;
+    public Enemy_HP EH;
     //public InputAction shoot;
     public float energy;
     public float maxEnergy;
@@ -21,11 +23,12 @@ public class ShootBullet : MonoBehaviour
     {
         PC = new PlayerMini_Control();
         CW = GameObject.FindObjectOfType<CounterBullet_Work>();
+        PS = GameObject.FindObjectOfType<PlayerScript>();
     }
 
     void Start()
     {
-
+        maxEnergy = PS.energy/2;
         energy = maxEnergy;
         SetEnergyBar();
     }
@@ -45,7 +48,7 @@ public class ShootBullet : MonoBehaviour
 
     private void Shoot(InputAction.CallbackContext context)
     {
-        if (energy > 0)
+        if (energy > 0 && EH.HP > 0)
         {
             Debug.Log("shoot");
 

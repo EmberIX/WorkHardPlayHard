@@ -19,6 +19,13 @@ public class PlayerMini_HP : MonoBehaviour
     void Start()
     {
         HP = MaxHP;
+        SetHPBar();
+    }
+
+    private void OnEnable()
+    {
+        HP = MaxHP;
+        SetHPBar();
     }
 
     private void FixedUpdate()
@@ -50,7 +57,7 @@ public class PlayerMini_HP : MonoBehaviour
             SetHPBar();
             TakeHit = true;
         }
-    }
+    }   
 
     public void SetHPBar()
     {

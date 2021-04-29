@@ -33,8 +33,6 @@ public class WorkShooter : MonoBehaviour
     public PlayerScript Ps;
 
     public Transform shooter;
-    public int shootingNum;
-    public int shootingEnd;
 
     public Enemy_HP EH;
     void Start()
@@ -104,15 +102,9 @@ public class WorkShooter : MonoBehaviour
                     this.transform.Rotate(rotate * rotateSpeed * Time.deltaTime);
                 }
 
-                shootingNum++;
                 isAttacking = false;
                 ATKCount = 0;
             }
-        }
-
-        if (shootingNum == shootingEnd)
-        {
-            Destroy(this.gameObject);
         }
     }
 
