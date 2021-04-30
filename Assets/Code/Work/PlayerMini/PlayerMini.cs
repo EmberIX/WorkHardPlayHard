@@ -11,6 +11,8 @@ public class PlayerMini : MonoBehaviour
     public Vector2 movement;
     public Enemy_HP EH;
     public PlayerMini_HP PMH;
+    public RectTransform startPosition;
+    Vector3 startPositionVector;
 
     private void Awake()
     {
@@ -27,6 +29,8 @@ public class PlayerMini : MonoBehaviour
     {
         PC.PlayerMini.Movement.performed += Move;
         PC.Enable();
+        startPositionVector = (startPosition.position);
+        this.gameObject.transform.position = startPositionVector; 
     }
 
     private void OnDisable()

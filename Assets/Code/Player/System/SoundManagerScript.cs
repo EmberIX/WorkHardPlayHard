@@ -27,6 +27,7 @@ public class SoundManagerScript : MonoBehaviour
     public static AudioClip CounterBullet;
     public static AudioClip particleBullet;
     public static AudioClip spearPower;
+    public static AudioClip workExplot;
     void Start()
     {
         playAudio = GameObject.FindGameObjectWithTag("PlayerAudio").GetComponent<AudioSource>();
@@ -51,6 +52,7 @@ public class SoundManagerScript : MonoBehaviour
         die = Resources.Load<AudioClip>("dead");
         enemyTakeDamage = Resources.Load<AudioClip>("enemyTakeDamage");
         EnemyBullet = Resources.Load<AudioClip>("enemyBullet");
+        workExplot = Resources.Load<AudioClip>("workExplot");
     }
 
     public static void PlaySound(AudioClip sound)

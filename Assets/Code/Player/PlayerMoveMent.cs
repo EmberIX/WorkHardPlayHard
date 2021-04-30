@@ -41,6 +41,9 @@ public class PlayerMoveMent : MonoBehaviour
     {
         if(Ps.isInteracted)
         {
+            animator.SetFloat("Horizontal", 0);
+            animator.SetFloat("Vertical", 0);
+            animator.SetFloat("Speed", 0);
             return;
         }
 

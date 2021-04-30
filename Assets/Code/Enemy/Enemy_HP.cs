@@ -17,6 +17,12 @@ public class Enemy_HP : MonoBehaviour
     private void Start()
     {
         HP = MaxHP;
+        SetHPBar();
+    }
+
+    void OnEnable()
+    {
+        SetHPBar();
     }
 
     public void TakeDamage(float amount)

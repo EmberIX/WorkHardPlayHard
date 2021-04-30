@@ -57,7 +57,17 @@ public class PlayerMini_HP : MonoBehaviour
             SetHPBar();
             TakeHit = true;
         }
+
+        if(HP<=0)
+        {
+            Dead();
+        }
     }   
+
+    public void Dead()
+    {
+        SoundManagerScript.PlaySound(SoundManagerScript.die);
+    }
 
     public void SetHPBar()
     {

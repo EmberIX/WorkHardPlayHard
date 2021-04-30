@@ -14,6 +14,9 @@ public class WorkEngine : MonoBehaviour
     public Animator WorkAni;
     public Animator PlayerAni;
 
+    bool soundactive;
+    bool playOnce; 
+
     void Start()
     {
         EH = GetComponentInChildren<Enemy_HP>();
@@ -22,11 +25,23 @@ public class WorkEngine : MonoBehaviour
 
     }
 
-    void LateUpdate()
+    private void OnEnable()
+    {
+        playOnce = true;
+    }
+
+    void FixedUpdate()
     {
         if(EH.HP <= 0 )
         {
             WorkAni.SetTrigger("Shake");
+            soundactive = true;
+            if (soundactive && playOnce)
+            {
+                SoundManagerScript.PlaySound(SoundManagerScript.workExplot);
+                soundactive = false;
+                playOnce = false;
+            }
             ani.SetTrigger("Success");
             StartCoroutine(Wait());
             IEnumerator Wait()
