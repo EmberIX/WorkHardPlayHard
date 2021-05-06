@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3474237997695722547}
   - component: {fileID: 8584133327981864896}
   - component: {fileID: 2844509777737274810}
+  - component: {fileID: 3038823041548948772}
   m_Layer: 5
   m_Name: purpleWorkBullet
   m_TagString: PurpleBullet
@@ -146,6 +147,22 @@ MonoBehaviour:
   bulletTime: 0
   bulletOut: 5
   DamagePar: {fileID: 7554497268663110018, guid: 59f416d604837da4cb9237e401d7efec, type: 3}
+--- !u!114 &3038823041548948772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897844491684919165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58be29f12cb0654f94f949fb2785013, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sprite: {fileID: 897844491684919166}
+  I1: {fileID: 3956138762085008816, guid: e32458cc5f7385b41a9d9b8a1421b0f3, type: 3}
+  I2: {fileID: 6155559764990413629, guid: e32458cc5f7385b41a9d9b8a1421b0f3, type: 3}
+  I3: {fileID: -1381403711208080328, guid: e32458cc5f7385b41a9d9b8a1421b0f3, type: 3}
 --- !u!1 &2224288599754617346
 GameObject:
   m_ObjectHideFlags: 0

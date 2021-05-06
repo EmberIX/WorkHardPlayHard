@@ -33,6 +33,7 @@ public class Work : MonoBehaviour
     public Text showText2;
     public GameObject TextBox1;
     public GameObject TextBox2;
+    public Animator ani;
 
     [Header("Work")]
     public GameObject WorkCanvas;
@@ -116,8 +117,14 @@ public class Work : MonoBehaviour
     void StartWorking()
     {
         C.isWorking = true;
-        WorkCanvas.SetActive(true);
-
+        ani.SetTrigger("Play");
+        StartCoroutine(Wait());
+        IEnumerator Wait()
+            {
+            print("Work Success");
+            yield return new WaitForSeconds(2.1f);
+            WorkCanvas.SetActive(true);
+        }
 
     }
 
